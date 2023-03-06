@@ -94,6 +94,10 @@ async function getPageSpeedData(
       headers: {
         "Content-Type": "application/json",
       },
+      next: {
+        // Revalidate every 60 seconds
+        revalidate: 60,
+      },
     }
   );
 
@@ -103,7 +107,7 @@ async function getPageSpeedData(
     throw new Error("Failed to fetch data");
   }
 
-  return await res.json();
+  return res.json();
 }
 
 const PageSpeedResult = async ({

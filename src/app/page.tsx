@@ -20,7 +20,7 @@ export default function Home() {
           return <PageSpeed key={url} url={url} />;
         })}
       </div>
-      <footer className="py-4 bg-gray-100 px-8 mt-8 rounded-lg text-gray-600">
+      <div className="py-4 bg-gray-100 px-8 mt-8 rounded-lg text-gray-600">
         Made by{" "}
         <Link
           className="underline underline-offset-4"
@@ -28,7 +28,7 @@ export default function Home() {
         >
           Bootpack Digital
         </Link>
-      </footer>
+      </div>
     </div>
   );
 }
