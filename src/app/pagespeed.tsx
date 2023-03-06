@@ -138,7 +138,7 @@ const PageSpeedResult = async ({
     <div>
       <Suspense
         fallback={
-          <div className="bg-gray-50 border rounded-xl px-8 py-4 inline-grid grid-cols-4 gap-12 flex-wrap text-center animate-pulse">
+          <div className="bg-gray-50 border rounded-xl px-8 py-4 inline-grid grid-cols-2 lg:grid-cols-4 gap-12 flex-wrap text-center animate-pulse">
             {["Performance", "Accessibility", "Best Practices", "SEO"].map(
               (category) => (
                 <div className="grid gap-2" key={category}>
