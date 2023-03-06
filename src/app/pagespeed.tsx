@@ -156,7 +156,7 @@ const PageSpeedResult = async ({
           </div>
         }
       >
-        <div className="bg-gray-50 border rounded-xl px-8 py-4 inline-grid grid-cols-4 gap-12 flex-wrap text-center">
+        <div className="bg-gray-50 border rounded-xl px-8 py-4 inline-grid grid-cols-2 lg:grid-cols-4 gap-12 flex-wrap text-center">
           <div className="grid gap-2">
             <CategoryScore
               pageSpeedLink={pageSpeedLink}
