@@ -8,7 +8,7 @@ export default async function PageSpeed({ url }: { url: string }) {
 
   return (
     <div className="grid gap-4 relative">
-      <div className="grid gap-2">
+      <div className="grid gap-4 lg:flex lg:flex-wrap lg:gap-16 items-end">
         <h2 className="font-bold text-lg lg:text-2xl text-sky-600 underline underline-offset-4">
           <Link className="break-all" target="_blank" href={url}>
             {url}
@@ -21,7 +21,11 @@ export default async function PageSpeed({ url }: { url: string }) {
             target="_blank"
           >
             <svg
-              className="h-5 w-5 transition-transform group-hover:scale-110"
+              className="transition-transform group-hover:scale-110"
+              style={{
+                width: "20px",
+                height: "20px",
+              }}
               height="2500"
               width="2500"
               xmlns="http://www.w3.org/2000/svg"
@@ -122,12 +126,19 @@ const PageSpeedResult = async ({
   const pageSpeedData = getPageSpeedData(url, strategy);
   const data = await pageSpeedData;
 
+  const categories = data?.lighthouseResult?.categories || {
+    performance: { score: 0 },
+    accessibility: { score: 0 },
+    "best-practices": { score: 0 },
+    seo: { score: 0 },
+  };
+
   const {
     performance,
     accessibility,
     "best-practices": bestPractices,
     seo,
-  } = data.lighthouseResult.categories;
+  } = categories;
 
   const performanceScore = performance.score * 100;
   const accessibilityScore = accessibility.score * 100;
@@ -138,7 +149,7 @@ const PageSpeedResult = async ({
     <div>
       <Suspense
         fallback={
-          <div className="bg-gray-50 border rounded-xl px-8 py-4 inline-grid grid-cols-2 lg:grid-cols-4 gap-12 flex-wrap text-center animate-pulse">
+          <div className="bg-gray-50 border rounded-xl px-8 py-4 grid lg:inline-grid grid-cols-2 lg:grid-cols-4 gap-12 flex-wrap text-center animate-pulse">
             {["Performance", "Accessibility", "Best Practices", "SEO"].map(
               (category) => (
                 <div className="grid gap-2" key={category}>
@@ -156,7 +167,7 @@ const PageSpeedResult = async ({
           </div>
         }
       >
-        <div className="bg-gray-50 border rounded-xl px-8 py-4 inline-grid grid-cols-2 lg:grid-cols-4 gap-12 flex-wrap text-center">
+        <div className="bg-gray-50 border rounded-xl px-8 py-4 grid lg:inline-grid grid-cols-2 lg:grid-cols-4 gap-12 flex-wrap text-center">
           <div className="grid gap-2">
             <CategoryScore
               pageSpeedLink={pageSpeedLink}
