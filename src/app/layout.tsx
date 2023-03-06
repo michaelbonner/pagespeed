@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "PageSpeed Testing",
-  description: "PageSpeed Testing",
+  title: "Bootpack PageSpeed Testing",
+  description: "PageSpeed Testing for bootpackdigital.com",
 };
 
 export default function RootLayout({
