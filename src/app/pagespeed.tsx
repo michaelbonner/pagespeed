@@ -167,31 +167,33 @@ const PageSpeedResult = async ({
           </div>
         }
       >
-        <div className="bg-gray-50 border rounded-xl px-8 py-4 grid lg:inline-grid grid-cols-2 lg:grid-cols-4 gap-12 flex-wrap text-center">
+        <div className="px-8 py-4 grid lg:inline-grid grid-cols-2 sm:grid-cols-4 gap-12 flex-wrap text-center">
           <div className="grid gap-2">
             <CategoryScore
               pageSpeedLink={pageSpeedLink}
               score={performanceScore}
             />
-            <div className="text-sm font-bold">Performance</div>
+            <div className="text-sm font-bold text-gray-700">Performance</div>
           </div>
           <div className="grid gap-2">
             <CategoryScore
               pageSpeedLink={pageSpeedLink}
               score={accessibilityScore}
             />
-            <div className="text-sm font-bold">Accessibility</div>
+            <div className="text-sm font-bold text-gray-700">Accessibility</div>
           </div>
           <div className="grid gap-2">
             <CategoryScore
               pageSpeedLink={pageSpeedLink}
               score={bestPracticesScore}
             />
-            <div className="text-sm font-bold">Best Practices</div>
+            <div className="text-sm font-bold text-gray-700">
+              Best Practices
+            </div>
           </div>
           <div className="grid gap-2">
             <CategoryScore pageSpeedLink={pageSpeedLink} score={seoScore} />
-            <div className="text-sm font-bold">SEO</div>
+            <div className="text-sm font-bold text-gray-700">SEO</div>
           </div>
         </div>
       </Suspense>
@@ -206,31 +208,69 @@ const CategoryScore = ({
   pageSpeedLink: string;
   score: number;
 }) => {
-  const getColor = (score: number) => {
+  const getColors = (score: number) => {
     if (score === 100) {
-      return "bg-green-600";
+      return {
+        background: "#f0fdf4",
+        color: "#166534",
+        ring: "#16a34a",
+      };
     } else if (score >= 90) {
-      return "bg-green-400";
+      return {
+        background: "#f0fdf4",
+        color: "#166534",
+        ring: "#4ade80",
+      };
     } else if (score >= 80) {
-      return "bg-yellow-500";
+      return {
+        background: "#fefce8",
+        color: "#854d0e",
+        ring: "#eab308",
+      };
     } else {
-      return "bg-red-500";
+      return {
+        background: "#fef2f2",
+        color: "#991b1b",
+        ring: "#ef4444",
+      };
     }
   };
 
+  const { background, color, ring } = getColors(score);
+
   return (
-    <Link
-      className="flex justify-center items-center"
-      href={pageSpeedLink}
-      target="_blank"
-    >
-      <div
-        className={`w-16 h-16 rounded-full flex items-center justify-center text-white ${getColor(
-          score
-        )}`}
+    <>
+      <Link
+        className="flex justify-center items-center"
+        href={pageSpeedLink}
+        target="_blank"
       >
-        {score}%
-      </div>
-    </Link>
+        <div
+          className="relative w-[80px] h-[80px] rounded-full"
+          style={{
+            backgroundColor: background,
+            color: color,
+          }}
+        >
+          <div
+            className="w-[80px] h-[80px] rounded-full transition-all"
+            style={{
+              background: `conic-gradient(${ring} ${Math.floor(
+                360 * (score / 100)
+              )}deg, transparent 0deg)`,
+            }}
+          />
+          <div
+            className={`absolute inset-[5px] w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center font-bold pl-1`}
+            style={{
+              backgroundColor: background,
+            }}
+          >
+            {score}
+            <span className="text-[8px] pb-1">%</span>
+          </div>
+        </div>
+      </Link>
+    </>
   );
 };
