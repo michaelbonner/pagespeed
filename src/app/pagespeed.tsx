@@ -64,14 +64,12 @@ export default async function PageSpeed({ url }: { url: string }) {
         </div>
       </div>
       <h3 className="text-lg font-semibold">Mobile</h3>
-      {/* @ts-expect-error Async Server Component */}
       <PageSpeedResult
         pageSpeedLink={`${pageSpeedLink}&form_factor=mobile`}
         strategy="mobile"
         url={url}
       />
       <h3 className="text-lg font-semibold">Desktop</h3>
-      {/* @ts-expect-error Async Server Component */}
       <PageSpeedResult
         pageSpeedLink={`${pageSpeedLink}&form_factor=desktop`}
         strategy="desktop"
