@@ -155,7 +155,9 @@ const PageSpeedResult = async ({
                   <a
                     className="flex justify-center items-center"
                     target="_blank"
-                    href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fbootpackdigital.com%2Fopen-source&amp;form_factor=desktop"
+                    href={`https://pagespeed.web.dev/report?url=${encodeURIComponent(
+                      url
+                    )}open-source&amp;form_factor=desktop`}
                   >
                     <div className="w-16 h-16 rounded-full flex items-center justify-center text-white bg-gray-500"></div>
                   </a>
