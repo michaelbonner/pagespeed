@@ -88,25 +88,24 @@ async function getPageSpeedData(
   strategy: "mobile" | "desktop" = "mobile"
 ) {
   try {
-    const res = await fetch(
-      `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}` +
-        `&key=${process.env.GOOGLE_API_KEY}` +
-        `&category=performance` +
-        `&category=accessibility` +
-        `&category=best-practices` +
-        `&category=seo` +
-        `&strategy=${strategy}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        next: {
-          // Revalidate every 60 seconds
-          revalidate: 60,
-        },
-      }
+    const urlObject = new URL(
+      "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
     );
+    urlObject.searchParams.append("url", url);
+    urlObject.searchParams.append("key", process.env.GOOGLE_API_KEY || "");
+    urlObject.searchParams.append("category", "performance");
+    urlObject.searchParams.append("category", "accessibility");
+    urlObject.searchParams.append("category", "best-practices");
+    urlObject.searchParams.append("category", "seo");
+    urlObject.searchParams.append("strategy", strategy);
+
+    console.log("urlObject", urlObject.toString());
+
+    const res = await fetch(urlObject.toString(), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!res.ok) {
       console.log("res", await res.json());
