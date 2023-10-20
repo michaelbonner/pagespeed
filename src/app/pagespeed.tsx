@@ -9,8 +9,12 @@ export default async function PageSpeed({ url }: { url: string }) {
   return (
     <div className="grid gap-4 relative">
       <div className="grid gap-4 lg:flex lg:flex-wrap lg:gap-16 items-end">
-        <h2 className="font-bold text-lg lg:text-2xl text-sky-600 underline underline-offset-4">
-          <Link className="break-all" target="_blank" href={url}>
+        <h2 className="font-bold text-lg lg:text-2xl text-sky-600">
+          <Link
+            className="break-all underline underline-offset-8"
+            target="_blank"
+            href={url}
+          >
             {url}
           </Link>
         </h2>
@@ -83,33 +87,38 @@ async function getPageSpeedData(
   url: string,
   strategy: "mobile" | "desktop" = "mobile"
 ) {
-  const res = await fetch(
-    `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}` +
-      `&key=${process.env.GOOGLE_API_KEY}` +
-      `&category=performance` +
-      `&category=accessibility` +
-      `&category=best-practices` +
-      `&category=seo` +
-      `&strategy=${strategy}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      next: {
-        // Revalidate every 60 seconds
-        revalidate: 60,
-      },
+  try {
+    const res = await fetch(
+      `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}` +
+        `&key=${process.env.GOOGLE_API_KEY}` +
+        `&category=performance` +
+        `&category=accessibility` +
+        `&category=best-practices` +
+        `&category=seo` +
+        `&strategy=${strategy}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        next: {
+          // Revalidate every 60 seconds
+          revalidate: 60,
+        },
+      }
+    );
+
+    if (!res.ok) {
+      console.log("res", await res.json());
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
     }
-  );
 
-  if (!res.ok) {
-    console.log("res", await res.json());
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    return res.json();
+  } catch (error) {
+    console.log(error);
+    return null;
   }
-
-  return res.json();
 }
 
 const PageSpeedResult = async ({
