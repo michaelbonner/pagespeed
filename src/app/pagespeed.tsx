@@ -99,8 +99,6 @@ async function getPageSpeedData(
     urlObject.searchParams.append("category", "seo");
     urlObject.searchParams.append("strategy", strategy);
 
-    console.log("urlObject", urlObject.toString());
-
     const res = await fetch(urlObject.toString(), {
       headers: {
         "Content-Type": "application/json",
@@ -108,14 +106,14 @@ async function getPageSpeedData(
     });
 
     if (!res.ok) {
-      console.log("res", await res.json());
+      console.error("res data", await res.json());
       // This will activate the closest `error.js` Error Boundary
       throw new Error("Failed to fetch data");
     }
 
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return null;
   }
 }
