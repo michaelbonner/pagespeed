@@ -227,7 +227,7 @@ const CategoryScore = ({
         color: "#166534",
         ring: "#4ade80",
       };
-    } else if (score >= 80) {
+    } else if (score >= 50) {
       return {
         background: "#fefce8",
         color: "#854d0e",
