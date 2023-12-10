@@ -215,25 +215,35 @@ const CategoryScore = ({
   score: number;
 }) => {
   const getColors = (score: number) => {
+    if (score === 0) {
+      return {
+        background: "#fef2f2",
+        color: "#991b1b",
+        ring: "#ef4444",
+      };
+    }
     if (score === 100) {
       return {
         background: "#f0fdf4",
         color: "#166534",
         ring: "#16a34a",
       };
-    } else if (score >= 90) {
+    }
+    if (score >= 90) {
       return {
         background: "#f0fdf4",
         color: "#166534",
         ring: "#4ade80",
       };
-    } else if (score >= 50) {
+    }
+    if (score >= 50) {
       return {
         background: "#fefce8",
         color: "#854d0e",
         ring: "#eab308",
       };
-    } else {
+    }
+    {
       return {
         background: "#fef2f2",
         color: "#991b1b",
@@ -272,8 +282,8 @@ const CategoryScore = ({
               backgroundColor: background,
             }}
           >
-            {score}
-            <span className="text-[8px] pb-1">%</span>
+            {score || "N/A"}
+            {score > 0 && <span className="text-[8px] pb-1">%</span>}
           </div>
         </div>
       </Link>
