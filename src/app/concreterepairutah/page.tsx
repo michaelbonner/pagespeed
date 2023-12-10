@@ -4,7 +4,6 @@ import PageSpeed from "../pagespeed";
 
 const urls = [
   "https://www.concreterepairutah.com/",
-  "https://www.concreterepairutah.com/wp-content/themes/fictive-web/library/images/logo-white.png.webp",
   "https://www.concreterepairutah.com/photos-of-concrete-repairs/porch/",
   "https://www.concreterepairutah.com/photos-of-concrete-repairs/stairs/",
   "https://www.concreterepairutah.com/foundation-plaster/",
