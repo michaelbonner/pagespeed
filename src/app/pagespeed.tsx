@@ -282,7 +282,7 @@ const CategoryScore = ({
               backgroundColor: background,
             }}
           >
-            {score || "N/A"}
+            {Math.round(score) || "N/A"}
             {score > 0 && <span className="text-[8px] pb-1">%</span>}
           </div>
         </div>
