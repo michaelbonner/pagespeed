@@ -4,13 +4,13 @@ import PageSpeed from "../pagespeed";
 
 const urls = [
   "https://www.concreterepairutah.com/",
+  "https://www.concreterepairutah.com/concrete-sealing/",
+  "https://www.concreterepairutah.com/contact-the-concrete-repair-specialists/",
+  "https://www.concreterepairutah.com/crack-repair/",
+  "https://www.concreterepairutah.com/foundation-plaster/",
   "https://www.concreterepairutah.com/photos-of-concrete-repairs/porch/",
   "https://www.concreterepairutah.com/photos-of-concrete-repairs/stairs/",
-  "https://www.concreterepairutah.com/foundation-plaster/",
-  "https://www.concreterepairutah.com/concrete-sealing/",
-  "https://www.concreterepairutah.com/crack-repair/",
   "https://www.concreterepairutah.com/reviews/",
-  "https://www.concreterepairutah.com/contact-the-concrete-repair-specialists/",
 ];
 
 export default function Home() {
