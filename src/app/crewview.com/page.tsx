@@ -3,8 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import PageSpeed from "../pagespeed";
 
-const baseUrl =
-  "https://crewview-public-website-git-feature-j-2aa1e0-blackthornsoftware.vercel.app";
+const baseUrl = "https://www.crewview.com";
 
 const urls = [
   "/",
