@@ -14,7 +14,7 @@ const urls = [
   "https://www.concreterepairutah.com/reviews/",
 ];
 
-export default function Home() {
+export default function ConcreteRepairUtahPageSpeed() {
   return (
     <div className="py-12">
       <h1 className="text-2xl lg:text-5xl mt-4">

@@ -19,10 +19,10 @@ const urls = [
   "/get-started",
 ];
 
-export default function Home() {
+export default function CrewViewPageSpeed() {
   return (
     <div className="py-12">
-      <h1 className="text-2xl lg:text-5xl mt-4">CrewView PR Page Speed</h1>
+      <h1 className="text-2xl lg:text-5xl mt-4">CrewView Page Speed</h1>
       <div className="grid gap-16 mt-4 py-8">
         {urls.map((url) => {
           const fullUrl = `${baseUrl}${url}`;
