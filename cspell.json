@@ -3,7 +3,10 @@
   "ignorePaths": [],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["pagespeed"],
+  "words": [
+    "pagespeed",
+    "raycast"
+  ],
   "ignoreWords": [],
   "import": []
 }
