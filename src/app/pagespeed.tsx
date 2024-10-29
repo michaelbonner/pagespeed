@@ -7,11 +7,11 @@ export default async function PageSpeed({ url }: { url: string }) {
   )}`;
 
   return (
-    <div className="grid gap-4 relative">
-      <div className="grid gap-4 lg:flex lg:flex-wrap lg:gap-16 items-end">
-        <h2 className="font-bold text-lg lg:text-2xl text-sky-600">
+    <div className="grid relative gap-4">
+      <div className="grid gap-4 items-end lg:flex lg:flex-wrap lg:gap-16">
+        <h2 className="text-lg font-bold lg:text-2xl text-sky-600">
           <Link
-            className="break-all underline underline-offset-8"
+            className="underline break-all underline-offset-8"
             target="_blank"
             href={url}
           >
@@ -20,7 +20,7 @@ export default async function PageSpeed({ url }: { url: string }) {
         </h2>
         <div>
           <Link
-            className="text-sky-600 underline underline-offset-4 flex items-center gap-2"
+            className="flex gap-2 items-center underline text-sky-600 underline-offset-4"
             href={pageSpeedLink}
             target="_blank"
           >
@@ -153,7 +153,7 @@ const PageSpeedResult = async ({
     <div>
       <Suspense
         fallback={
-          <div className="bg-gray-50 border rounded-xl px-8 py-4 grid lg:inline-grid grid-cols-2 lg:grid-cols-4 gap-12 flex-wrap text-center animate-pulse">
+          <div className="grid flex-wrap grid-cols-2 gap-12 py-4 px-8 text-center bg-gray-50 rounded-xl border animate-pulse lg:inline-grid lg:grid-cols-4">
             {["Performance", "Accessibility", "Best Practices", "SEO"].map(
               (category) => (
                 <div className="grid gap-2" key={category}>
@@ -165,7 +165,7 @@ const PageSpeedResult = async ({
                       url
                     )}open-source&amp;form_factor=desktop`}
                   >
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-white bg-gray-500"></div>
+                    <div className="flex justify-center items-center w-16 h-16 text-white bg-gray-500 rounded-full"></div>
                   </a>
                 </div>
               )
@@ -173,7 +173,7 @@ const PageSpeedResult = async ({
           </div>
         }
       >
-        <div className="px-8 py-4 grid lg:inline-grid grid-cols-2 sm:grid-cols-4 gap-12 flex-wrap text-center">
+        <div className="grid flex-wrap grid-cols-2 gap-12 py-4 px-8 text-center sm:grid-cols-4 lg:inline-grid">
           <div className="grid gap-2">
             <CategoryScore
               pageSpeedLink={pageSpeedLink}
@@ -262,14 +262,14 @@ const CategoryScore = ({
         target="_blank"
       >
         <div
-          className="relative w-[80px] h-[80px] rounded-full"
+          className="relative rounded-full w-[80px] h-[80px]"
           style={{
             backgroundColor: background,
             color: color,
           }}
         >
           <div
-            className="w-[80px] h-[80px] rounded-full transition-all"
+            className="rounded-full transition-all w-[80px] h-[80px]"
             style={{
               background: `conic-gradient(${ring} ${Math.floor(
                 360 * (score / 100)
@@ -283,7 +283,7 @@ const CategoryScore = ({
             }}
           >
             {Math.round(score) || "N/A"}
-            {score > 0 && <span className="text-[8px] pb-1">%</span>}
+            {score > 0 && <span className="pb-1 text-[8px]">%</span>}
           </div>
         </div>
       </Link>

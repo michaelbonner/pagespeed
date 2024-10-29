@@ -16,7 +16,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body>
-        <div className="max-w-7xl px-10 mx-auto">{children}</div>
+        <div className="px-10 mx-auto max-w-7xl">{children}</div>
       </body>
     </html>
   );

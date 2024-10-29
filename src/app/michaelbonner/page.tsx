@@ -20,10 +20,10 @@ const paths = [
 export default function AcceleratedEquityPlansPageSpeed() {
   return (
     <div className="py-12">
-      <h1 className="text-2xl lg:text-5xl mt-4">
+      <h1 className="mt-4 text-2xl lg:text-5xl">
         Michael Bonner Personal Site Page Speed
       </h1>
-      <div className="grid gap-16 mt-4 py-8">
+      <div className="grid gap-16 py-8 mt-4">
         {paths.map((path) => {
           const url = `${baseUrl}${path}`;
           return (
@@ -31,9 +31,9 @@ export default function AcceleratedEquityPlansPageSpeed() {
               key={url}
               fallback={
                 <div>
-                  <h2 className="font-bold text-lg lg:text-2xl text-sky-600">
+                  <h2 className="text-lg font-bold lg:text-2xl text-sky-600">
                     <Link
-                      className="break-all underline underline-offset-8"
+                      className="underline break-all underline-offset-8"
                       target="_blank"
                       href={url}
                     >

@@ -13,10 +13,10 @@ const urls = [
 export default function Home() {
   return (
     <div className="py-12">
-      <h1 className="text-2xl lg:text-5xl mt-4">
+      <h1 className="mt-4 text-2xl lg:text-5xl">
         Bootpack PageSpeed Test Results
       </h1>
-      <div className="grid gap-16 mt-4 py-8">
+      <div className="grid gap-16 py-8 mt-4">
         {urls.map((url) => {
           return <PageSpeed key={url} url={url} />;
         })}
