@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "out": "bun outdated"
   },
   "dependencies": {
     "@types/node": "^22.10.1",
