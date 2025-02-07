@@ -10,7 +10,7 @@
     "out": "bun outdated"
   },
   "dependencies": {
-    "@types/node": "^22.13.0",
+    "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "eslint-config-next": "^15.1.6",
@@ -20,8 +20,8 @@
     "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.3",
+    "@tailwindcss/postcss": "^4.0.4",
     "postcss": "^8.5.1",
-    "tailwindcss": "^4.0.3"
+    "tailwindcss": "^4.0.4"
   }
 }
