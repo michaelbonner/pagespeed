@@ -10,8 +10,8 @@
     "out": "bun outdated"
   },
   "dependencies": {
-    "@types/node": "^22.13.2",
-    "@types/react": "^19.0.8",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.9",
     "@types/react-dom": "^19.0.3",
     "eslint-config-next": "^15.1.7",
     "next": "^15.1.7",
