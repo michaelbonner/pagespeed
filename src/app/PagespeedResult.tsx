@@ -103,6 +103,7 @@ export const PageSpeedResult = ({
   const accessibilityScore = accessibility.score * 100;
   const bestPracticesScore = bestPractices.score * 100;
   const seoScore = seo.score * 100;
+  const screenshot = data?.lighthouseResult?.fullPageScreenshot?.screenshot;
 
   return (
     <div className="grid flex-wrap grid-cols-2 gap-12 py-4 px-8 text-center sm:grid-cols-4 lg:inline-grid">
@@ -128,6 +129,15 @@ export const PageSpeedResult = ({
         <CategoryScore pageSpeedLink={pageSpeedLink} score={seoScore} />
         <div className="text-sm font-bold text-gray-700">SEO</div>
       </div>
+      {screenshot && (
+        <div>
+          <img
+            alt="Page Speed Screenshot"
+            className="w-24 rounded-xl"
+            src={screenshot}
+          />
+        </div>
+      )}
     </div>
   );
 };

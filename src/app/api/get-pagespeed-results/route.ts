@@ -92,5 +92,8 @@ async function getPageSpeedData(
         },
       },
     },
+    fullPageScreenshot: {
+      screenshot: returnData?.lighthouseResult?.fullPageScreenshot?.screenshot,
+    },
   };
 }
