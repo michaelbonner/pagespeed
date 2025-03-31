@@ -3,7 +3,13 @@ import { NextRequest, NextResponse } from "next/server";
 
 const TWO_HOURS_IN_SECONDS = 2 * 60 * 60;
 
-const allowedDomains = ["bootpackdigital.com", "michaelbonner.dev"];
+const allowedDomains = [
+  "bootpackdigital.com",
+  "michaelbonner.dev",
+  "www.acceleratedep.com",
+  "www.crewview.com",
+  "www.dkow.com",
+];
 
 export const maxDuration = 120;
 
