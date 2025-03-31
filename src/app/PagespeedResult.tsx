@@ -1,6 +1,5 @@
 "use client";
 
-import { getApiHost } from "@/functions/getApiHost";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
@@ -8,10 +7,8 @@ const getPageSpeedData = async (
   url: string,
   strategy: "mobile" | "desktop"
 ) => {
-  const apiHost = getApiHost();
-
   const res = await fetch(
-    `${apiHost}/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
+    `/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
   );
 
   if (!res.ok) {
