@@ -61,9 +61,30 @@ async function getPageSpeedData(
 
   if (!res.ok) {
     console.error("res data", await res.text());
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
+  const returnData = await res.json();
+
+  return {
+    lighthouseResult: {
+      categories: {
+        performance: {
+          score:
+            returnData?.lighthouseResult?.categories?.performance?.score ?? 0,
+        },
+        accessibility: {
+          score:
+            returnData?.lighthouseResult?.categories?.accessibility?.score ?? 0,
+        },
+        "best-practices": {
+          score:
+            returnData?.lighthouseResult?.categories?.bestPractices?.score ?? 0,
+        },
+        seo: {
+          score: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
+        },
+      },
+    },
+  };
 }
