@@ -1,3 +1,5 @@
+"use server";
+
 export async function getPageSpeedData(
   url: string,
   strategy: "mobile" | "desktop" = "mobile"
@@ -22,7 +24,7 @@ export async function getPageSpeedData(
     });
 
     if (!res.ok) {
-      console.error("res data", await res.json());
+      console.error("res data", await res.text());
       // This will activate the closest `error.js` Error Boundary
       throw new Error("Failed to fetch data");
     }

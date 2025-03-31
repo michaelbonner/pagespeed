@@ -1,6 +1,8 @@
 import { Footer } from "@/components/footer";
 import PageSpeed from "./pagespeed";
 
+export const dynamic = "force-dynamic";
+
 const urls = [
   "https://bootpackdigital.com/",
   "https://bootpackdigital.com/about",
