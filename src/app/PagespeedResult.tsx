@@ -106,7 +106,7 @@ export const PageSpeedResult = ({
   const screenshot = data?.lighthouseResult?.fullPageScreenshot?.screenshot;
 
   return (
-    <div className="grid flex-wrap grid-cols-2 gap-12 py-4 px-8 text-center sm:grid-cols-4 lg:inline-grid">
+    <div className="grid flex-wrap grid-cols-2 gap-12 py-4 px-8 text-center sm:grid-cols-5 lg:inline-grid">
       <div className="grid gap-2">
         <CategoryScore pageSpeedLink={pageSpeedLink} score={performanceScore} />
         <div className="text-sm font-bold text-gray-700">Performance</div>
@@ -130,10 +130,10 @@ export const PageSpeedResult = ({
         <div className="text-sm font-bold text-gray-700">SEO</div>
       </div>
       {!!screenshot && (
-        <div>
+        <div className="col-span-2 sm:col-span-1 h-[200px] overflow-y-auto rounded-lg border border-gray-200">
           <img
             alt="Page Speed Screenshot"
-            className="w-24 rounded-xl"
+            className="w-full object-fill"
             height={screenshot.height}
             src={screenshot.data}
             width={screenshot.width}
