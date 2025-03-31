@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 const allowedDomains = ["bootpackdigital.com", "michaelbonner.dev"];
 
 export const config = {
-  maxDuration: 30,
+  maxDuration: 60,
 };
 
 export async function GET(request: NextRequest) {
