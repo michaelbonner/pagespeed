@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className="py-4 lg:py-10">
         <QueryErrorResetBoundary>
           <Providers>
-            <div className="px-4 lg:px-10 mx-auto max-w-7xl">{children}</div>
+            <div className="px-4 lg:px-10 mx-auto max-w-9xl">{children}</div>
           </Providers>
         </QueryErrorResetBoundary>
 
