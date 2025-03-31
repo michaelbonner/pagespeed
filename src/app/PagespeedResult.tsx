@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { clsx } from "clsx";
 import Link from "next/link";
 
 const getPageSpeedData = async (
@@ -130,7 +131,14 @@ export const PageSpeedResult = ({
         <div className="text-sm font-bold text-gray-700">SEO</div>
       </div>
       {!!screenshot && (
-        <div className="col-span-2 sm:col-span-1 2xl:col-span-2 h-[200px] 2xl:h-[400px] overflow-y-auto rounded-lg border border-gray-200 2xl:-translate-y-3">
+        <div
+          className={clsx(
+            "col-span-2 h-[200px] overflow-y-auto rounded-lg border border-gray-200",
+            "sm:col-span-1",
+            "2xl:col-span-2 2xl:h-[400px] 2xl:-translate-y-3",
+            strategy === "mobile" ? "aspect-2/3" : "aspect-3/2"
+          )}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             alt="Page Speed Screenshot"
