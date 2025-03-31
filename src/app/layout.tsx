@@ -1,5 +1,8 @@
-import { Footer } from "@/components/footer";
 import "./globals.css";
+
+import { Footer } from "@/components/footer";
+import Providers from "./providers";
+import { QueryErrorResetBoundary } from "@tanstack/react-query";
 
 export const metadata = {
   title: "Bootpack PageSpeed Testing",
@@ -17,7 +20,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className="py-4 lg:py-10">
-        <div className="px-4 lg:px-10 mx-auto max-w-7xl">{children}</div>
+        <QueryErrorResetBoundary>
+          <Providers>
+            <div className="px-4 lg:px-10 mx-auto max-w-7xl">{children}</div>
+          </Providers>
+        </QueryErrorResetBoundary>
 
         <Footer />
       </body>

@@ -8,30 +8,25 @@ export default function PageSpeed({ url }: { url: string }) {
   )}`;
 
   return (
-    <Suspense
-      fallback={
-        <div className="grid relative gap-4">
-          <PagespeedRowHeader url={url} pageSpeedLink={pageSpeedLink} />
-          <div>Loading results...</div>
-        </div>
-      }
-    >
-      <div className="grid relative gap-4">
-        <PagespeedRowHeader url={url} pageSpeedLink={pageSpeedLink} />
-        <h3 className="text-lg font-semibold">Mobile</h3>
+    <div className="grid relative gap-4">
+      <PagespeedRowHeader url={url} pageSpeedLink={pageSpeedLink} />
+      <h3 className="text-lg font-semibold">Mobile</h3>
+      <Suspense fallback={<div>Loading mobile results...</div>}>
         <PageSpeedResult
           pageSpeedLink={`${pageSpeedLink}&form_factor=mobile`}
           strategy="mobile"
           url={url}
         />
-        <h3 className="text-lg font-semibold">Desktop</h3>
+      </Suspense>
+      <h3 className="text-lg font-semibold">Desktop</h3>
+      <Suspense fallback={<div>Loading desktop results...</div>}>
         <PageSpeedResult
           pageSpeedLink={`${pageSpeedLink}&form_factor=desktop`}
           strategy="desktop"
           url={url}
         />
-      </div>
-    </Suspense>
+      </Suspense>
+    </div>
   );
 }
 

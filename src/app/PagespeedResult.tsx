@@ -1,13 +1,29 @@
+"use client";
+
 import Link from "next/link";
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
+import { Suspense } from "react";
+
+const getApiHost = () => {
+  if (process.env.VERCEL_ENV === "production") {
+    return "https://pagespeed.bootpack.dev";
+  }
+
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+  return "http://localhost:3000";
+};
 
 const getPageSpeedData = async (
   url: string,
   strategy: "mobile" | "desktop"
 ) => {
+  const apiHost = getApiHost();
+
   const res = await fetch(
-    process.env.NODE_ENV === "development"
-      ? `http://localhost:3000/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
-      : `https://${process.env.VERCEL_URL}/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
+    `${apiHost}/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
   );
 
   if (!res.ok) {
@@ -26,7 +42,10 @@ export const PageSpeedResult = async ({
   strategy: "mobile" | "desktop";
   url: string;
 }) => {
-  const data = await getPageSpeedData(url, strategy);
+  const { data } = useSuspenseQuery({
+    queryKey: ["pageSpeedData", url, strategy],
+    queryFn: () => getPageSpeedData(url, strategy),
+  });
 
   const categories = data?.lighthouseResult?.categories || {
     performance: { score: 0 },
