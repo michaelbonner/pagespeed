@@ -136,7 +136,9 @@ export const PageSpeedResult = ({
             "w-full col-span-2 overflow-y-auto rounded-lg border border-gray-200",
             "sm:col-span-1",
             "2xl:col-span-2 2xl:-translate-y-3",
-            strategy === "mobile" ? "aspect-5/6" : "aspect-3/2"
+            strategy === "mobile"
+              ? "aspect-5/8 max-w-[320px] mx-auto"
+              : "aspect-3/2"
           )}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
