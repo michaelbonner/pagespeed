@@ -133,9 +133,9 @@ export const PageSpeedResult = ({
       {!!screenshot && (
         <div
           className={clsx(
-            "col-span-2 h-[200px] overflow-y-auto rounded-lg border border-gray-200",
+            "w-full col-span-2 overflow-y-auto rounded-lg border border-gray-200",
             "sm:col-span-1",
-            "2xl:col-span-2 2xl:h-[400px] 2xl:-translate-y-3",
+            "2xl:col-span-2 2xl:-translate-y-3",
             strategy === "mobile" ? "aspect-2/3" : "aspect-3/2"
           )}
         >
