@@ -129,12 +129,14 @@ export const PageSpeedResult = ({
         <CategoryScore pageSpeedLink={pageSpeedLink} score={seoScore} />
         <div className="text-sm font-bold text-gray-700">SEO</div>
       </div>
-      {screenshot && (
+      {!!screenshot && (
         <div>
           <img
             alt="Page Speed Screenshot"
             className="w-24 rounded-xl"
-            src={screenshot}
+            height={screenshot.height}
+            src={screenshot.data}
+            width={screenshot.width}
           />
         </div>
       )}

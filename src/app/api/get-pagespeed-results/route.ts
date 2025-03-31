@@ -92,9 +92,10 @@ async function getPageSpeedData(
           score: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
         },
       },
-    },
-    fullPageScreenshot: {
-      screenshot: returnData?.lighthouseResult?.fullPageScreenshot?.screenshot,
+      fullPageScreenshot: {
+        screenshot:
+          returnData?.lighthouseResult?.fullPageScreenshot?.screenshot,
+      },
     },
   };
 }
