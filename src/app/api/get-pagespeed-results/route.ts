@@ -5,9 +5,7 @@ const TWO_HOURS_IN_SECONDS = 2 * 60 * 60;
 
 const allowedDomains = ["bootpackdigital.com", "michaelbonner.dev"];
 
-export const config = {
-  maxDuration: 120,
-};
+export const maxDuration = 120;
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
