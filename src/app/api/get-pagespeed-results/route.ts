@@ -28,6 +28,7 @@ export async function GET(request: NextRequest) {
       ["pagespeed-results", url, strategy],
       {
         revalidate: TWO_HOURS_IN_SECONDS,
+        tags: ["pagespeed-results"],
       }
     );
 
