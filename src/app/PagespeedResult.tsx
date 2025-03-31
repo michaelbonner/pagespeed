@@ -33,7 +33,7 @@ const getPageSpeedData = async (
   return res.json();
 };
 
-export const PageSpeedResult = async ({
+export const PageSpeedResult = ({
   pageSpeedLink,
   strategy,
   url,
