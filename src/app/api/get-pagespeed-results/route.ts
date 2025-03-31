@@ -1,4 +1,4 @@
-import { getPageSpeedData } from "@/functions/getPagespeedData";
+import { unstable_cache } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 const allowedDomains = ["bootpackdigital.com", "michaelbonner.dev"];
@@ -20,9 +20,13 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const results = await getPageSpeedData(url, strategy);
+    const cachedResults = unstable_cache(
+      async (url: string, strategy: "mobile" | "desktop") =>
+        getPageSpeedData(url, strategy),
+      ["pagespeed-results", url, strategy]
+    );
 
-    return NextResponse.json(results);
+    return NextResponse.json(await cachedResults(url, strategy));
   } catch (error) {
     console.error(error);
 
@@ -31,4 +35,35 @@ export async function GET(request: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+export async function getPageSpeedData(
+  url: string,
+  strategy: "mobile" | "desktop" = "mobile"
+) {
+  const urlObject = new URL(
+    "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
+  );
+  urlObject.searchParams.append("url", url);
+  urlObject.searchParams.append("key", process.env.GOOGLE_API_KEY || "");
+  urlObject.searchParams.append("category", "performance");
+  urlObject.searchParams.append("category", "accessibility");
+  urlObject.searchParams.append("category", "best-practices");
+  urlObject.searchParams.append("category", "seo");
+  urlObject.searchParams.append("strategy", strategy);
+
+  const res = await fetch(urlObject.toString(), {
+    headers: {
+      "Content-Type": "application/json",
+      cache: "force-cache",
+    },
+  });
+
+  if (!res.ok) {
+    console.error("res data", await res.text());
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
 }
