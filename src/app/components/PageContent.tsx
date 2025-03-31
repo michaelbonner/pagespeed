@@ -1,4 +1,4 @@
-import PageSpeed from "./pagespeed";
+import PageSpeed from "./PageSpeed";
 
 export const PageContent = ({
   title,

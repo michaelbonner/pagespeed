@@ -1,4 +1,4 @@
-import { PageContent } from "./PageContent";
+import { PageContent } from "./components/PageContent";
 
 const baseUrl = "https://bootpackdigital.com";
 const paths = ["/", "/about", "/contact", "/open-source", "/policies", "/work"];

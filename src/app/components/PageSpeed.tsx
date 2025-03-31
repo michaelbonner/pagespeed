@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { PageSpeedResult } from "./PagespeedResult";
 import { Suspense } from "react";
+import { PageSpeedResult } from "./PagespeedResult";
 
 export default function PageSpeed({ url }: { url: string }) {
   const pageSpeedLink = `https://pagespeed.web.dev/report?url=${encodeURIComponent(

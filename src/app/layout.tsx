@@ -1,8 +1,8 @@
 import "./globals.css";
 
-import { Footer } from "@/components/footer";
 import { QueryErrorResetBoundary } from "@tanstack/react-query";
-import Providers from "./Providers";
+import { Footer } from "./components/Footer";
+import Providers from "./components/Providers";
 
 export const metadata = {
   title: "Bootpack PageSpeed Testing",
