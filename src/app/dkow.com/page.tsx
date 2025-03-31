@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { Suspense } from "react";
 import PageSpeed from "../pagespeed";
@@ -22,7 +21,7 @@ const urls = [
 
 export default function DKOWViewPageSpeed() {
   return (
-    <div className="py-12">
+    <div>
       <h1 className="mt-4 text-2xl lg:text-5xl">DKOW Page Speed</h1>
       <div className="grid gap-16 py-8 mt-4">
         {urls.map((url) => {
@@ -50,7 +49,6 @@ export default function DKOWViewPageSpeed() {
           );
         })}
       </div>
-      <Footer />
     </div>
   );
 }

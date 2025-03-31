@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer";
 import PageSpeed from "./pagespeed";
 
 const urls = [
@@ -12,7 +11,7 @@ const urls = [
 
 export default function Home() {
   return (
-    <div className="py-12">
+    <div>
       <h1 className="mt-4 text-2xl lg:text-5xl">
         Bootpack PageSpeed Test Results
       </h1>
@@ -21,7 +20,6 @@ export default function Home() {
           return <PageSpeed key={url} url={url} />;
         })}
       </div>
-      <Footer />
     </div>
   );
 }

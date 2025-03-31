@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { Suspense } from "react";
 import PageSpeed from "../pagespeed";
@@ -16,7 +15,7 @@ const urls = [
 
 export default function ConcreteRepairUtahPageSpeed() {
   return (
-    <div className="py-12">
+    <div>
       <h1 className="mt-4 text-2xl lg:text-5xl">
         Concrete Repair Utah Page Speed
       </h1>
@@ -45,7 +44,6 @@ export default function ConcreteRepairUtahPageSpeed() {
           );
         })}
       </div>
-      <Footer />
     </div>
   );
 }

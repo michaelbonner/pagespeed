@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { Suspense } from "react";
 import PageSpeed from "../pagespeed";
@@ -19,7 +18,7 @@ const paths = [
 
 export default function AcceleratedEquityPlansPageSpeed() {
   return (
-    <div className="py-12">
+    <div>
       <h1 className="mt-4 text-2xl lg:text-5xl">
         Michael Bonner Personal Site Page Speed
       </h1>
@@ -49,7 +48,6 @@ export default function AcceleratedEquityPlansPageSpeed() {
           );
         })}
       </div>
-      <Footer />
     </div>
   );
 }

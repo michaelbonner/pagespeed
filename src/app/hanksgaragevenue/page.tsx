@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { Suspense } from "react";
 import PageSpeed from "../pagespeed";
@@ -13,7 +12,7 @@ const urls = [
 
 export default function HanksGarageVenuePageSpeed() {
   return (
-    <div className="py-12">
+    <div>
       <h1 className="mt-4 text-2xl lg:text-5xl">
         Hanks Garage Venue Test Results
       </h1>
@@ -42,7 +41,6 @@ export default function HanksGarageVenuePageSpeed() {
           );
         })}
       </div>
-      <Footer />
     </div>
   );
 }
