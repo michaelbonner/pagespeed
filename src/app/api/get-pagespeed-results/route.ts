@@ -1,6 +1,8 @@
 import { unstable_cache } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
+const TWO_HOURS_IN_SECONDS = 2 * 60 * 60;
+
 const allowedDomains = ["bootpackdigital.com", "michaelbonner.dev"];
 
 export const config = {
@@ -23,7 +25,10 @@ export async function GET(request: NextRequest) {
     const cachedResults = unstable_cache(
       async (url: string, strategy: "mobile" | "desktop") =>
         getPageSpeedData(url, strategy),
-      ["pagespeed-results", url, strategy]
+      ["pagespeed-results", url, strategy],
+      {
+        revalidate: TWO_HOURS_IN_SECONDS,
+      }
     );
 
     return NextResponse.json(await cachedResults(url, strategy));
