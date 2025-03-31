@@ -131,6 +131,7 @@ export const PageSpeedResult = ({
       </div>
       {!!screenshot && (
         <div className="col-span-2 sm:col-span-1 h-[200px] overflow-y-auto rounded-lg border border-gray-200">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             alt="Page Speed Screenshot"
             className="w-full object-fill"
