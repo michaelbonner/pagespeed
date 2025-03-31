@@ -3,8 +3,6 @@ import Link from "next/link";
 import { Suspense } from "react";
 import PageSpeed from "../pagespeed";
 
-export const dynamic = "force-dynamic";
-
 const baseUrl = "https://www.crewview.com";
 
 const urls = [

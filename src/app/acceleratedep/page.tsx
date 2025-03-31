@@ -3,8 +3,6 @@ import Link from "next/link";
 import { Suspense } from "react";
 import PageSpeed from "../pagespeed";
 
-export const dynamic = "force-dynamic";
-
 const urls = [
   "https://www.acceleratedep.com/",
   "https://www.acceleratedep.com/services",
