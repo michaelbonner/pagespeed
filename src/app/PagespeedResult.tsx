@@ -7,7 +7,7 @@ const getPageSpeedData = async (
   const res = await fetch(
     process.env.NODE_ENV === "development"
       ? `http://localhost:3000/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
-      : `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
+      : `https://${process.env.VERCEL_URL}/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
   );
 
   if (!res.ok) {
