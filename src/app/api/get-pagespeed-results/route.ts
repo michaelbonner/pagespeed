@@ -79,7 +79,8 @@ async function getPageSpeedData(
         },
         "best-practices": {
           score:
-            returnData?.lighthouseResult?.categories?.bestPractices?.score ?? 0,
+            returnData?.lighthouseResult?.categories?.["best-practices"]
+              ?.score ?? 0,
         },
         seo: {
           score: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
