@@ -1,19 +1,8 @@
 "use client";
 
+import { getApiHost } from "@/functions/getApiHost";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-
-const getApiHost = () => {
-  if (process.env.VERCEL_ENV === "production") {
-    return "https://pagespeed.bootpack.dev";
-  }
-
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-
-  return "http://localhost:3000";
-};
 
 const getPageSpeedData = async (
   url: string,
