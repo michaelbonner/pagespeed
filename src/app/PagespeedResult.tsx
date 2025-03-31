@@ -1,5 +1,21 @@
-import { getPageSpeedData } from "@/functions/getPagespeedData";
 import Link from "next/link";
+
+const getPageSpeedData = async (
+  url: string,
+  strategy: "mobile" | "desktop"
+) => {
+  const res = await fetch(
+    process.env.NODE_ENV === "development"
+      ? `http://localhost:3000/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
+      : `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+};
 
 export const PageSpeedResult = async ({
   pageSpeedLink,
