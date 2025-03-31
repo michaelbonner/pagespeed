@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function getPageSpeedData(
+async function getPageSpeedData(
   url: string,
   strategy: "mobile" | "desktop" = "mobile"
 ) {
