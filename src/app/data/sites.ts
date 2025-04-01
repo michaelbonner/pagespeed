@@ -47,7 +47,7 @@ export const sites = {
   energysafekids: {
     baseUrl: "https://energysafekids.vercel.app",
     paths: ["/", "/student-resources", "/teacher-resources", "/about"],
-    title: "Energy Safe Kids",
+    title: "energysafekids.vercel.app",
   },
   michaelbonner: {
     baseUrl: "https://michaelbonner.dev",
