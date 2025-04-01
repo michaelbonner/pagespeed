@@ -1,15 +1,12 @@
+import { sites } from "@/app/data/sites";
 import { unstable_cache } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 const TWO_HOURS_IN_SECONDS = 2 * 60 * 60;
 
-const allowedDomains = [
-  "bootpackdigital.com",
-  "michaelbonner.dev",
-  "www.acceleratedep.com",
-  "www.crewview.com",
-  "www.dkow.com",
-];
+const allowedHostnames = Object.values(sites).map(
+  (site) => new URL(site.baseUrl)?.hostname
+);
 
 export const maxDuration = 120;
 
@@ -21,7 +18,7 @@ export async function GET(request: NextRequest) {
 
   const domain = new URL(url).hostname;
 
-  if (!allowedDomains.includes(domain)) {
+  if (!allowedHostnames.includes(domain)) {
     return NextResponse.json({ error: "Invalid domain" }, { status: 400 });
   }
 
