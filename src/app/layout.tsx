@@ -1,8 +1,15 @@
 import "./globals.css";
 
 import { QueryErrorResetBoundary } from "@tanstack/react-query";
+import { Inter } from "next/font/google";
 import { Footer } from "./components/Footer";
 import Providers from "./components/Providers";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata = {
   title: "Bootpack PageSpeed Testing",
@@ -15,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
