@@ -2,10 +2,12 @@ export const sites = {
   acceleratedep: {
     baseUrl: "https://www.acceleratedep.com",
     paths: ["/", "/services", "/about", "/careers", "/contact"],
+    title: "Accelerated Equity Plans",
   },
   bootpackdigital: {
     baseUrl: "https://bootpackdigital.com",
     paths: ["/", "/about", "/contact", "/open-source", "/policies", "/work"],
+    title: "Bootpack Digital",
   },
   crewview: {
     baseUrl: "https://www.crewview.com",
@@ -23,6 +25,7 @@ export const sites = {
       "/contact",
       "/privacy-policy",
     ],
+    title: "CrewView",
   },
   dkow: {
     baseUrl: "https://www.dkow.com",
@@ -39,10 +42,12 @@ export const sites = {
       "/dkow-files-lawsuit-for-the-wrongful-death-of-julia-reagan/",
       "/contact/",
     ],
+    title: "DKOW",
   },
-  energySafeKids: {
+  energysafekids: {
     baseUrl: "https://energysafekids.vercel.app",
     paths: ["/", "/student-resources", "/teacher-resources", "/about"],
+    title: "Energy Safe Kids",
   },
   michaelbonner: {
     baseUrl: "https://michaelbonner.dev",
@@ -57,6 +62,7 @@ export const sites = {
       "/uses",
       "/ellie",
     ],
+    title: "Michael Bonner",
   },
   nef1: {
     baseUrl: "https://nef1.org",
@@ -78,7 +84,23 @@ export const sites = {
       "/annual-reports/",
       "/contact/",
     ],
+    title: "NEF1",
   },
+};
+
+export const getSiteData = (site: keyof typeof sites) => {
+  const siteData = sites[site];
+
+  if (!siteData) {
+    return null;
+  }
+
+  return {
+    baseUrl: siteData.baseUrl,
+    paths: siteData.paths,
+    title: siteData.title,
+    urls: getUrls(site),
+  };
 };
 
 export const getUrls = (site: keyof typeof sites) => {

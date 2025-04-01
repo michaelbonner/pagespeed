@@ -1,11 +1,15 @@
+import { notFound } from "next/navigation";
 import { PageContent } from "./components/PageContent";
-import { getUrls } from "./data/sites";
+import { getSiteData } from "./data/sites";
 
 export default function Home() {
-  return (
-    <PageContent
-      title="Bootpack PageSpeed Test Results"
-      urls={getUrls("bootpackdigital")}
-    />
-  );
+  const siteData = getSiteData("bootpackdigital");
+
+  if (!siteData) {
+    return notFound();
+  }
+
+  const { urls, title } = siteData;
+
+  return <PageContent title={title} urls={urls} />;
 }
