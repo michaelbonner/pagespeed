@@ -2,12 +2,12 @@ export const sites = {
   acceleratedep: {
     baseUrl: "https://www.acceleratedep.com",
     paths: ["/", "/services", "/about", "/careers", "/contact"],
-    title: "Accelerated Equity Plans",
+    title: "acceleratedep.com",
   },
   bootpackdigital: {
     baseUrl: "https://bootpackdigital.com",
     paths: ["/", "/about", "/contact", "/open-source", "/policies", "/work"],
-    title: "Bootpack Digital",
+    title: "bootpackdigital.com",
   },
   crewview: {
     baseUrl: "https://www.crewview.com",
@@ -25,7 +25,7 @@ export const sites = {
       "/contact",
       "/privacy-policy",
     ],
-    title: "CrewView",
+    title: "crewview.com",
   },
   dkow: {
     baseUrl: "https://www.dkow.com",
@@ -42,7 +42,7 @@ export const sites = {
       "/dkow-files-lawsuit-for-the-wrongful-death-of-julia-reagan/",
       "/contact/",
     ],
-    title: "DKOW",
+    title: "dkow.com",
   },
   energysafekids: {
     baseUrl: "https://energysafekids.vercel.app",
@@ -62,7 +62,7 @@ export const sites = {
       "/uses",
       "/ellie",
     ],
-    title: "Michael Bonner",
+    title: "michaelbonner.dev",
   },
   nef1: {
     baseUrl: "https://nef1.org",
@@ -84,7 +84,7 @@ export const sites = {
       "/annual-reports/",
       "/contact/",
     ],
-    title: "NEF1",
+    title: "nef1.org",
   },
 };
 

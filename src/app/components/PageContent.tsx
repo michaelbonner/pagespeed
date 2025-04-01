@@ -9,7 +9,9 @@ export const PageContent = ({
 }) => {
   return (
     <div>
-      <h1 className="mt-4 text-2xl lg:text-5xl">{title}</h1>
+      <h1 className="mt-4 text-2xl lg:text-5xl">
+        PageSpeed results for {title}
+      </h1>
       <div className="grid gap-16 py-8 mt-4">
         {urls.map((url) => {
           return <PageSpeed key={url} url={url} />;
