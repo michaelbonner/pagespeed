@@ -9,7 +9,7 @@ export const PageContent = ({
 }) => {
   return (
     <div>
-      <h1 className="mt-4 text-2xl lg:text-5xl">
+      <h1 className="mt-4 lg:text-4xl font-medium leading-loose text-[clamp(14px,6vw,48px)]">
         PageSpeed results for{" "}
         <code className="p-3 rounded-md bg-gray-100">{title}</code>
       </h1>
