@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { IoDesktopOutline, IoPhonePortraitOutline } from "react-icons/io5";
 import { PageSpeedResult } from "./PagespeedResult";
 
 export default function PageSpeed({ url }: { url: string }) {
@@ -8,9 +9,13 @@ export default function PageSpeed({ url }: { url: string }) {
   )}`;
 
   return (
-    <div className="grid relative gap-4">
+    <div className="grid relative gap-4 pb-12">
       <PagespeedRowHeader url={url} pageSpeedLink={pageSpeedLink} />
-      <h3 className="text-lg font-semibold">Mobile</h3>
+      <h3 className="text-lg font-semibold flex items-center gap-1">
+        <IoPhonePortraitOutline className="size-4" />
+
+        <span>Mobile</span>
+      </h3>
       <Suspense fallback={<div>Loading mobile results...</div>}>
         <PageSpeedResult
           pageSpeedLink={`${pageSpeedLink}&form_factor=mobile`}
@@ -18,7 +23,11 @@ export default function PageSpeed({ url }: { url: string }) {
           url={url}
         />
       </Suspense>
-      <h3 className="text-lg font-semibold">Desktop</h3>
+      <h3 className="text-lg font-semibold flex items-center gap-1">
+        <IoDesktopOutline className="size-4" />
+
+        <span>Desktop</span>
+      </h3>
       <Suspense fallback={<div>Loading desktop results...</div>}>
         <PageSpeedResult
           pageSpeedLink={`${pageSpeedLink}&form_factor=desktop`}

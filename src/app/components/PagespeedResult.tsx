@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { clsx } from "clsx";
 import Link from "next/link";
+import { IoAlertCircleOutline } from "react-icons/io5";
 
 const getPageSpeedData = async (
   url: string,
@@ -48,28 +49,12 @@ export const PageSpeedResult = ({
   if (status === "error") {
     return (
       <div className="border-l-4 border-yellow-400 bg-yellow-50 p-4">
-        <div className="flex">
-          <div className="shrink-0">
-            <svg
-              className="size-5 text-yellow-400"
-              aria-hidden="true"
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              height="200px"
-              width="200px"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
+        <div className="flex lg:items-center gap-2">
+          <div className="shrink-0 pt-0.5 lg:pt-0">
+            <IoAlertCircleOutline className="size-5 text-yellow-700/50" />
           </div>
-          <div className="ml-3">
-            <p className="text-sm text-yellow-700">
+          <div>
+            <p className="text-yellow-700">
               There was an error loading this data via the api.{" "}
               <a
                 className="font-medium text-yellow-700 underline hover:text-yellow-600"
@@ -112,41 +97,49 @@ export const PageSpeedResult = ({
         Last updated:{" "}
         {data?.updatedAt ? new Date(data?.updatedAt).toLocaleString() : "N/A"}
       </p>
-      <div className="grid flex-wrap grid-cols-2 gap-12 py-4 px-8 text-center sm:grid-cols-5 2xl:grid-cols-6 lg:inline-grid">
-        <div className="flex flex-col gap-2 justify-center">
+      <div className="grid w-full flex-wrap grid-cols-2 gap-2 py-4 text-center sm:grid-cols-5 2xl:grid-cols-6 lg:inline-grid">
+        <div className="flex flex-col gap-2 justify-center border rounded-2xl p-4 w-full">
           <CategoryScore
             pageSpeedLink={pageSpeedLink}
             score={performanceScore}
           />
-          <div className="text-sm font-bold text-gray-700">Performance</div>
+          <div className="text-sm lg:text-base font-bold text-gray-700">
+            Performance
+          </div>
         </div>
-        <div className="flex flex-col gap-2 justify-center">
+        <div className="flex flex-col gap-2 justify-center border rounded-2xl p-4 w-full">
           <CategoryScore
             pageSpeedLink={pageSpeedLink}
             score={accessibilityScore}
           />
-          <div className="text-sm font-bold text-gray-700">Accessibility</div>
+          <div className="text-sm lg:text-base font-bold text-gray-700">
+            Accessibility
+          </div>
         </div>
-        <div className="flex flex-col gap-2 justify-center">
+        <div className="flex flex-col gap-2 justify-center border rounded-2xl p-4 w-full">
           <CategoryScore
             pageSpeedLink={pageSpeedLink}
             score={bestPracticesScore}
           />
-          <div className="text-sm font-bold text-gray-700">Best Practices</div>
+          <div className="text-sm lg:text-base font-bold text-gray-700">
+            Best Practices
+          </div>
         </div>
-        <div className="flex flex-col gap-2 justify-center">
+        <div className="flex flex-col gap-2 justify-center border rounded-2xl p-4 w-full">
           <CategoryScore pageSpeedLink={pageSpeedLink} score={seoScore} />
-          <div className="text-sm font-bold text-gray-700">SEO</div>
+          <div className="text-sm lg:text-base font-bold text-gray-700">
+            SEO
+          </div>
         </div>
         {!!screenshot && (
           <div
             className={clsx(
-              "w-full col-span-2 overflow-y-auto rounded-lg border border-gray-200",
+              "w-full h-full col-span-2 overflow-y-auto rounded-lg border border-gray-200 overflow-hidden max-h-[300px] lg:max-h-[200px] lg:max-w-[300px]",
               "sm:col-span-1",
-              "2xl:col-span-2 2xl:-translate-y-3",
+              "2xl:col-span-2 2xl:max-h-[300px]",
               strategy === "mobile"
-                ? "aspect-5/8 max-w-[320px] mx-auto"
-                : "aspect-3/2"
+                ? "aspect-5/8 max-w-[300px] 2xl:max-w-[300px] mx-auto"
+                : "aspect-3/2 2xl:max-w-[500px]"
             )}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -13,7 +13,7 @@ export const PageContent = ({
         PageSpeed results for{" "}
         <code className="p-3 rounded-md bg-gray-100">{title}</code>
       </h1>
-      <div className="grid gap-16 py-8 mt-4">
+      <div className="grid gap-16 py-8 mt-4 divide-y divide-gray-300">
         {urls.map((url) => {
           return <PageSpeed key={url} url={url} />;
         })}
