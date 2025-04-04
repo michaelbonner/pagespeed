@@ -98,5 +98,6 @@ async function getPageSpeedData(
           returnData?.lighthouseResult?.fullPageScreenshot?.screenshot,
       },
     },
+    updatedAt: new Date().toISOString(),
   };
 }
