@@ -16,16 +16,17 @@
     "@types/react-dom": "^19.1.1",
     "clsx": "^2.1.1",
     "eslint-config-next": "^15.2.4",
+    "motion": "^12.6.3",
     "next": "^15.2.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.2",
+    "@tailwindcss/postcss": "^4.1.3",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.2"
+    "tailwindcss": "^4.1.3"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
