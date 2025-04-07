@@ -40,9 +40,12 @@ export const PageSpeedResult = ({
 
   if (status === "pending") {
     return (
-      <p className="text-sm text-gray-500 py-4 animate-pulse">
-        Loading results...
-      </p>
+      <>
+        <p className="text-sm text-gray-500 pb-8 animate-pulse min-h-[300px] lg:min-h-[200px] 2xl:min-h-[300px]">
+          Loading results...
+        </p>
+        <p className="text-sm text-gray-500 py-2">&nbsp;</p>
+      </>
     );
   }
 
