@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { clsx } from "clsx";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { IoAlertCircleOutline } from "react-icons/io5";
 
@@ -214,31 +215,67 @@ const CategoryScore = ({
         href={pageSpeedLink}
         target="_blank"
       >
-        <div
-          className="relative rounded-full w-[80px] h-[80px]"
-          style={{
-            backgroundColor: background,
-            color: color,
-          }}
-        >
-          <div
-            className="rounded-full transition-all w-[80px] h-[80px]"
-            style={{
-              background: `conic-gradient(${ring} ${Math.floor(
-                360 * (score / 100)
-              )}deg, transparent 0deg)`,
+        <svg className="w-full h-full">
+          <motion.circle
+            cx="50%"
+            cy="50%"
+            r="38"
+            fill={background}
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5,
             }}
           />
-          <div
-            className={`absolute inset-[5px] w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center font-bold pl-1`}
-            style={{
-              backgroundColor: background,
+          <motion.circle
+            className="-rotate-90 origin-center"
+            cx="50%"
+            cy="50%"
+            r="40"
+            fill="none"
+            stroke={ring}
+            strokeWidth="5"
+            pathLength="100"
+            initial={{
+              strokeDasharray: `0 100`,
+            }}
+            whileInView={{
+              strokeDasharray: `${score} 100`,
+            }}
+            transition={{
+              visualDuration: 0.75,
+              bounce: 0.25,
+              type: "spring",
+            }}
+          />
+          <motion.text
+            x="50%"
+            y="51%"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill={color}
+            fontWeight="bold"
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              delay: 0.25,
+              duration: 0.5,
             }}
           >
             {Math.round(score) || "N/A"}
-            {score > 0 && <span className="pb-1 text-[8px]">%</span>}
-          </div>
-        </div>
+            {score > 0 && <tspan className="text-xs">%</tspan>}
+          </motion.text>
+        </svg>
       </Link>
     </>
   );
