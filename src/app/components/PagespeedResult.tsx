@@ -231,6 +231,7 @@ const CategoryScore = ({
               duration: 0.5,
               delay: 0.5,
             }}
+            viewport={{ once: true }}
           />
           <motion.circle
             cx="50%"
@@ -251,6 +252,7 @@ const CategoryScore = ({
               bounce: 0.25,
               type: "spring",
             }}
+            viewport={{ once: true }}
           />
           <motion.text
             x="50%"
@@ -270,6 +272,7 @@ const CategoryScore = ({
               delay: 0.25,
               duration: 0.5,
             }}
+            viewport={{ once: true }}
           >
             {Math.round(score) || "N/A"}
             {score > 0 && <tspan className="text-xs">%</tspan>}
