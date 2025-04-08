@@ -233,7 +233,6 @@ const CategoryScore = ({
             }}
           />
           <motion.circle
-            className="-rotate-90 origin-center"
             cx="50%"
             cy="50%"
             r="40"
