@@ -10,14 +10,14 @@
     "out": "bun outdated"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.72.1",
+    "@tanstack/react-query": "^5.72.2",
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.1",
+    "@types/react-dom": "^19.1.2",
     "clsx": "^2.1.1",
-    "eslint-config-next": "^15.2.4",
+    "eslint-config-next": "^15.3.0",
     "motion": "^12.6.3",
-    "next": "^15.2.4",
+    "next": "^15.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
