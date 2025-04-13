@@ -10,7 +10,7 @@
     "out": "bun outdated"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.72.2",
+    "@tanstack/react-query": "^5.74.0",
     "@types/node": "^22.14.1",
     "@types/react": "^19.1.1",
     "@types/react-dom": "^19.1.2",
