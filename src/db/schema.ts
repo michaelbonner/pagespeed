@@ -22,5 +22,8 @@ export const pagesTable = pgTable(
     seoScore: numeric().notNull(),
     createdAt: timestamp().notNull().defaultNow(),
   },
-  (table) => [index("url_strategy_index").on(table.url, table.strategy)]
+  (table) => [
+    index("url_strategy_index").on(table.url, table.strategy),
+    index("url_index").on(table.url),
+  ]
 );
