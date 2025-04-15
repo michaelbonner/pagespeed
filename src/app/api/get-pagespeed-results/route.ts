@@ -75,19 +75,23 @@ async function getPageSpeedData(
 
   const returnData = await res.json();
 
-  // store in the db
-
-  await db.insert(pagesTable).values({
-    url,
-    strategy,
-    performanceScore:
-      returnData?.lighthouseResult?.categories?.performance?.score ?? 0,
-    accessibilityScore:
-      returnData?.lighthouseResult?.categories?.accessibility?.score ?? 0,
-    bestPracticesScore:
-      returnData?.lighthouseResult?.categories?.["best-practices"]?.score ?? 0,
-    seoScore: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
-  });
+  try {
+    // store in the db
+    await db.insert(pagesTable).values({
+      url,
+      strategy,
+      performanceScore:
+        returnData?.lighthouseResult?.categories?.performance?.score ?? 0,
+      accessibilityScore:
+        returnData?.lighthouseResult?.categories?.accessibility?.score ?? 0,
+      bestPracticesScore:
+        returnData?.lighthouseResult?.categories?.["best-practices"]?.score ??
+        0,
+      seoScore: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
+    });
+  } catch (error) {
+    console.error(error);
+  }
 
   return {
     lighthouseResult: {
