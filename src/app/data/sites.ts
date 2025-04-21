@@ -49,6 +49,11 @@ export const sites = {
     paths: ["/", "/student-resources", "/teacher-resources", "/about"],
     title: "energysafekids.vercel.app",
   },
+  hanksgaragevenue: {
+    baseUrl: "https://www.hanksgaragevenue.com",
+    paths: ["/", "/tour", "/garage-specs", "/events", "/contact"],
+    title: "hanksgaragevenue.com",
+  },
   michaelbonner: {
     baseUrl: "https://michaelbonner.dev",
     paths: [
