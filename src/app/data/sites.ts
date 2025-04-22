@@ -91,18 +91,6 @@ export const sites = {
     ],
     title: "nef1.org",
   },
-  thermwise: {
-    baseUrl: "https://www.thermwise.com",
-    paths: [
-      "/",
-      "/home-energy-plan/",
-      "/energy-saving-tips/",
-      "/energy-comparison-report/",
-      "/equipment-specs/",
-      "/rebates/",
-    ],
-    title: "thermwise.com",
-  },
 };
 
 export const getSiteData = (site: keyof typeof sites) => {
