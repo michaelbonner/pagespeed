@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.8",
-    "@types/pg": "^8.15.2",
+    "@types/pg": "^8.15.4",
     "drizzle-kit": "^0.31.1",
     "postcss": "^8.5.4",
     "tailwindcss": "^4.1.8",
