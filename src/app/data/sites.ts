@@ -4,6 +4,11 @@ export const sites = {
     paths: ["/", "/services", "/about", "/careers", "/contact"],
     title: "acceleratedep.com",
   },
+  blackthornsoftware: {
+    baseUrl: "https://www.blackthornsoftware.com",
+    paths: ["/", "/careers", "/get-started"],
+    title: "blackthornsoftware.com",
+  },
   bootpackdigital: {
     baseUrl: "https://bootpackdigital.com",
     paths: ["/", "/about", "/contact", "/open-source", "/policies", "/work"],
