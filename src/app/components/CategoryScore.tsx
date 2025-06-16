@@ -56,6 +56,7 @@ export const CategoryScore = ({
         className="flex justify-center items-center"
         href={pageSpeedLink}
         target="_blank"
+        aria-label={`View pagespeed results for ${pageSpeedLink}`}
       >
         <svg className="w-full h-full">
           <motion.circle
