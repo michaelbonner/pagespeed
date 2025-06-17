@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 16.x
+      - name: Use Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: "latest"
