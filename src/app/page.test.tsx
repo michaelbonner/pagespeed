@@ -1,7 +1,7 @@
-import { expect, test } from "vitest";
-import { render, screen } from "@testing-library/react";
-import Home from "./page";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { render, screen } from "@testing-library/react";
+import { expect, test } from "vitest";
+import Home from "./page";
 
 test("Page", () => {
   const queryClient = new QueryClient();
