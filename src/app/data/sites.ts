@@ -59,6 +59,21 @@ export const sites = {
     paths: ["/", "/tour", "/garage-specs", "/events", "/contact"],
     title: "hanksgaragevenue.com",
   },
+  homphoto: {
+    baseUrl: "https://www.homphoto.co/",
+    paths: [
+      "/",
+      "/about-the-photographer",
+      "/blog",
+      "/commercial-interiors",
+      "/faqs",
+      "/get-in-touch",
+      "/in-home-familiy-sessions",
+      "/on-location-family-sessions",
+      "/the-experiences",
+    ],
+    title: "homphoto.co",
+  },
   michaelbonner: {
     baseUrl: "https://michaelbonner.dev",
     paths: [
