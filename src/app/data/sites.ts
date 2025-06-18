@@ -60,7 +60,7 @@ export const sites = {
     title: "hanksgaragevenue.com",
   },
   homphoto: {
-    baseUrl: "https://www.homphoto.co/",
+    baseUrl: "https://www.homphoto.co",
     paths: [
       "/",
       "/about-the-photographer",
