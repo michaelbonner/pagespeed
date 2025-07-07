@@ -111,6 +111,11 @@ export const sites = {
     ],
     title: "nef1.org",
   },
+  theravenspace: {
+    baseUrl: "https://theravenspace.com",
+    paths: ["/", "/about", "/gallery"],
+    title: "theravenspace.com",
+  },
 };
 
 export const getSiteData = (site: keyof typeof sites) => {
