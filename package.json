@@ -21,7 +21,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "clsx": "^2.1.1",
-    "dotenv": "^16.6.1",
+    "dotenv": "^17.1.0",
     "drizzle-orm": "^0.44.2",
     "eslint-config-next": "^15.3.5",
     "motion": "^12.23.0",
