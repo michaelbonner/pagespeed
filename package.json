@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "out": "bun outdated",
+    "up": "bun update",
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
