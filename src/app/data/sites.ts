@@ -134,6 +134,18 @@ export const sites = {
     ],
     title: "utahmountainadventures.com",
   },
+  wasatchcovers: {
+    baseUrl: "https://wasatchcovers.com",
+    paths: [
+      "/",
+      "/about/",
+      "/products/",
+      "/product/window-well-cover-steel-black/",
+      "/product/liner-brown-stone/",
+      "/why-custom-matters/",
+    ],
+    title: "wasatchcovers.com",
+  },
 };
 
 export const getSiteData = (site: keyof typeof sites) => {
