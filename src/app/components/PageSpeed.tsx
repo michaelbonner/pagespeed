@@ -151,9 +151,9 @@ const PagespeedRowHeader = ({
           </SheetTrigger>
           <SheetContent className="w-[90vw] sm:max-w-[80vw] lg:max-w-[60vw]">
             <SheetHeader>
-              <SheetTitle>History</SheetTitle>
-              <SheetDescription>Performance history for {url}</SheetDescription>
-              <ScrollArea className="h-[calc(100vh-80px)] w-full rounded-md border p-4">
+              <SheetTitle>PageSpeed History</SheetTitle>
+              <SheetDescription>{url}</SheetDescription>
+              <ScrollArea className="h-[calc(100vh-6rem)] w-full rounded-md border p-4 mt-2">
                 <div className="py-4">
                   <div className="flex gap-2 flex-wrap items-center">
                     <h2 className="font-bold text-xl flex gap-2 items-baseline">
