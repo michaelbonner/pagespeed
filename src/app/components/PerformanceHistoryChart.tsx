@@ -43,7 +43,10 @@ export function PerformanceHistoryChart({
   return (
     <div>
       <h3 className="my-4">
-        {label} (Average {average})
+        {label}{" "}
+        <span className="text-muted-foreground font-light text-sm">
+          Average {average}%
+        </span>
       </h3>
       <ChartContainer
         config={{
