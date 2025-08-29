@@ -26,16 +26,18 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="py-4 lg:py-10">
-        <QueryErrorResetBoundary>
-          <Providers>
-            <div className="px-4 lg:px-10 mx-auto max-w-[100rem]">
-              {children}
-            </div>
-          </Providers>
-        </QueryErrorResetBoundary>
+      <body>
+        <div className="py-4 lg:py-10">
+          <QueryErrorResetBoundary>
+            <Providers>
+              <div className="px-4 lg:px-10 mx-auto max-w-[100rem]">
+                {children}
+              </div>
+            </Providers>
+          </QueryErrorResetBoundary>
 
-        <Footer />
+          <Footer />
+        </div>
       </body>
     </html>
   );
