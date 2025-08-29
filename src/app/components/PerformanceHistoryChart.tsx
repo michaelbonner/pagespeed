@@ -44,7 +44,7 @@ export function PerformanceHistoryChart({
     <div>
       <h3 className="my-4">
         {label}{" "}
-        <span className="text-muted-foreground font-light text-sm">
+        <span className="text-muted-foreground font-light">
           Average {average}%
         </span>
       </h3>
