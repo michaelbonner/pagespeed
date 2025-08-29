@@ -48,7 +48,7 @@ export function PerformanceHistoryChart({
       <ChartContainer
         config={{
           score: {
-            label,
+            label: "",
           },
         }}
         className="h-[160px] w-full"
@@ -87,7 +87,7 @@ export function PerformanceHistoryChart({
           />
           <Area
             dataKey="score"
-            type="natural"
+            type="basis"
             fill={colors.at(index) ?? colors[0]}
             fillOpacity={0.4}
             stroke={colors.at(index) ?? colors[0]}
