@@ -49,10 +49,15 @@ export const sites = {
     ],
     title: "dkow.com",
   },
-  energysafekids: {
+  "new.energysafekids.org": {
     baseUrl: "https://energysafekids.vercel.app",
     paths: ["/", "/student-resources", "/teacher-resources", "/about"],
     title: "energysafekids.vercel.app",
+  },
+  energysafekids: {
+    baseUrl: "https://energysafekids.org",
+    paths: ["/"],
+    title: "energysafekids.org",
   },
   hanksgaragevenue: {
     baseUrl: "https://www.hanksgaragevenue.com",
