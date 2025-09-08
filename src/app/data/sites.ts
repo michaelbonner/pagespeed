@@ -56,7 +56,13 @@ export const sites = {
   },
   energysafekids: {
     baseUrl: "https://energysafekids.org",
-    paths: ["/"],
+    paths: [
+      "/",
+      "/student-resources",
+      "/teacher-resources",
+      "/about",
+      "/registration",
+    ],
     title: "energysafekids.org",
   },
   hanksgaragevenue: {
