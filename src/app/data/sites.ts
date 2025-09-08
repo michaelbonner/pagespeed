@@ -49,11 +49,6 @@ export const sites = {
     ],
     title: "dkow.com",
   },
-  "new.energysafekids.org": {
-    baseUrl: "https://energysafekids.vercel.app",
-    paths: ["/", "/student-resources", "/teacher-resources", "/about"],
-    title: "energysafekids.vercel.app",
-  },
   energysafekids: {
     baseUrl: "https://energysafekids.org",
     paths: [
