@@ -95,6 +95,18 @@ export const sites = {
     ],
     title: "michaelbonner.dev",
   },
+  mountainlandcovers: {
+    baseUrl: "https://mountainlandcovers.com",
+    paths: [
+      "/",
+      "/about/",
+      "/products/",
+      "/product/window-well-cover-steel-black/",
+      "/product/liner-brown-stone/",
+      "/why-custom-matters/",
+    ],
+    title: "mountainlandcovers.com",
+  },
   nef1: {
     baseUrl: "https://nef1.org",
     paths: [
