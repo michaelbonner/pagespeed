@@ -62,7 +62,14 @@ export const sites = {
   },
   hanksgaragevenue: {
     baseUrl: "https://www.hanksgaragevenue.com",
-    paths: ["/", "/tour", "/garage-specs", "/events", "/contact"],
+    paths: [
+      "/",
+      "/about-us-history",
+      "/garage-specs",
+      "/weddings",
+      "/events",
+      "/contact",
+    ],
     title: "hanksgaragevenue.com",
   },
   homphoto: {
