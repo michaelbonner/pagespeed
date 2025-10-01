@@ -30,13 +30,13 @@ export default function RootLayout({
         <div className="py-4 lg:py-10">
           <QueryErrorResetBoundary>
             <Providers>
-              <div className="px-4 lg:px-10 mx-auto max-w-[100rem]">
-                {children}
-              </div>
+              <main className="px-4 lg:px-10 mx-auto">{children}</main>
             </Providers>
           </QueryErrorResetBoundary>
 
-          <Footer />
+          <aside className="px-4 lg:px-10 mx-auto">
+            <Footer />
+          </aside>
         </div>
       </body>
     </html>

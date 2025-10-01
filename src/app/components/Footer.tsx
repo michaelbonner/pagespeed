@@ -3,10 +3,10 @@ import { sites } from "../data/sites";
 
 export const Footer = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 lg:px-10">
-      <div className="grid gap-4 py-4 px-8 mt-8 text-gray-600 bg-gray-100 rounded-lg">
+    <div className="max-w-screen-2xl mx-auto prose prose-lg">
+      <div className="text-gray-600">
         <div>
-          <h3 className="text-lg font-bold">Sites</h3>
+          <h2>Sites</h2>
           <nav className="flex flex-wrap gap-x-4 gap-y-2">
             {Object.entries(sites).map(([key, site]) => (
               <Link
@@ -19,7 +19,7 @@ export const Footer = () => {
             ))}
           </nav>
         </div>
-        <div>
+        <div className="prose-sm mt-6">
           ©2023-{new Date().getFullYear()}{" "}
           <Link
             className="underline underline-offset-4"
