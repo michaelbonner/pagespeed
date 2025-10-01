@@ -4,8 +4,7 @@ I wanted an easy way to check in on the PageSpeed scores on the webiste. That's 
 
 Example Screenshot:
 
-![Screenshot 2023-09-11 at 11 15 48 AM](https://github.com/michaelbonner/pagespeed/assets/1122945/d889019a-93bc-44c9-9a46-c6f2be5a90f2)
-
+<img width="2600" height="1823" alt="Screenshot of pagespeed.bootpack.dev" src="https://github.com/user-attachments/assets/5e4f9424-4aec-4e07-a6ad-f604df403f97" />
 
 ## Need some dev help?
 
