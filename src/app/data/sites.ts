@@ -32,6 +32,19 @@ export const sites = {
     ],
     title: "crewview.com",
   },
+  denverwindowwellcovers: {
+    baseUrl: "https://denverwindowwellcovers.com",
+    paths: [
+      "/",
+      "/about/",
+      "/product/steel-window-well-covers/",
+      "/product/window-well-liners-in-denver/",
+      "/product/window-well-ladders/",
+      "/contact-us/",
+      "/service-areas/",
+    ],
+    title: "denverwindowwellcovers.com",
+  },
   dkow: {
     baseUrl: "https://www.dkow.com",
     paths: [
@@ -158,6 +171,19 @@ export const sites = {
       "/guides/",
     ],
     title: "utahmountainadventures.com",
+  },
+  utahwindowwellcovers: {
+    baseUrl: "https://utahwindowwellcovers.com",
+    paths: [
+      "/",
+      "/about/",
+      "/product/steel-window-well-covers/",
+      "/product/window-well-liners-in-utah/",
+      "/product/window-well-ladders/",
+      "/contact-us/",
+      "/service-areas/",
+    ],
+    title: "utahwindowwellcovers.com",
   },
   wasatchcovers: {
     baseUrl: "https://wasatchcovers.com",
