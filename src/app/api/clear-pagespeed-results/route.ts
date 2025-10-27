@@ -14,7 +14,7 @@ export const GET = (req: NextRequest) => {
     );
   }
 
-  revalidateTag(key);
+  revalidateTag(key, "max");
 
   return NextResponse.json({
     success: true,
