@@ -100,6 +100,20 @@ export const sites = {
     ],
     title: "homphoto.co",
   },
+  jmills: {
+    baseUrl: "https://www.jmillsent.com",
+    paths: [
+      "/",
+      "/about",
+      "/contact",
+      "/moments",
+      "/news",
+      "/news/jme-wins-gold-at-telly-awards",
+      "/studio",
+      "/work",
+    ],
+    title: "jmillsent.com",
+  },
   michaelbonner: {
     baseUrl: "https://michaelbonner.dev",
     paths: [
