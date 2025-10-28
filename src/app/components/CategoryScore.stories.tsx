@@ -1,16 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-
 import { CategoryScore } from "./CategoryScore";
 
 const meta = {
   component: CategoryScore,
-} satisfies Meta<typeof CategoryScore>;
+};
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default = {
   args: {
     pageSpeedLink:
       "https://pagespeed.web.dev/report?url=https://www.google.com",
@@ -18,7 +14,7 @@ export const Default: Story = {
   },
 };
 
-export const Perfect: Story = {
+export const Perfect = {
   args: {
     pageSpeedLink:
       "https://pagespeed.web.dev/report?url=https://www.google.com",
@@ -26,7 +22,7 @@ export const Perfect: Story = {
   },
 };
 
-export const Good: Story = {
+export const Good = {
   args: {
     pageSpeedLink:
       "https://pagespeed.web.dev/report?url=https://www.google.com",
@@ -34,7 +30,7 @@ export const Good: Story = {
   },
 };
 
-export const Average: Story = {
+export const Average = {
   args: {
     pageSpeedLink:
       "https://pagespeed.web.dev/report?url=https://www.google.com",
@@ -42,7 +38,7 @@ export const Average: Story = {
   },
 };
 
-export const Bad: Story = {
+export const Bad = {
   args: {
     pageSpeedLink:
       "https://pagespeed.web.dev/report?url=https://www.google.com",
@@ -50,7 +46,7 @@ export const Bad: Story = {
   },
 };
 
-export const VeryBad: Story = {
+export const VeryBad = {
   args: {
     pageSpeedLink:
       "https://pagespeed.web.dev/report?url=https://www.google.com",
@@ -58,7 +54,7 @@ export const VeryBad: Story = {
   },
 };
 
-export const Empty: Story = {
+export const Empty = {
   args: {
     pageSpeedLink:
       "https://pagespeed.web.dev/report?url=https://www.google.com",
