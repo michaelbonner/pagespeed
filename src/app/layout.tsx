@@ -14,6 +14,7 @@ const inter = Inter({
 export const metadata = {
   title: "Bootpack PageSpeed Testing",
   description: "PageSpeed Testing for bootpackdigital.com",
+  metadataBase: new URL("https://pagespeed.bootpack.dev/"),
 };
 
 export default function RootLayout({
