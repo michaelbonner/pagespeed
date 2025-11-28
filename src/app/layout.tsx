@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { QueryErrorResetBoundary } from "@tanstack/react-query";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Footer } from "./components/Footer";
 import Providers from "./components/Providers";
@@ -11,7 +12,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Bootpack PageSpeed Testing",
   description: "PageSpeed Testing for bootpackdigital.com",
   metadataBase: new URL("https://pagespeed.bootpack.dev/"),
