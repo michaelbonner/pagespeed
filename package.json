@@ -17,11 +17,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.90.11",
+    "@tanstack/react-query": "^5.90.12",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
-    "drizzle-orm": "^0.44.7",
+    "drizzle-orm": "^0.45.0",
     "eslint-config-next": "^16.0.7",
     "lucide-react": "^0.548.0",
     "motion": "^12.23.25",
@@ -52,7 +52,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitest/browser": "^4.0.15",
     "@vitest/browser-playwright": "^4.0.15",
-    "drizzle-kit": "^0.31.7",
+    "drizzle-kit": "^0.31.8",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-storybook": "^10.1.4",
