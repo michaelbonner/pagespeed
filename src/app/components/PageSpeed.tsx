@@ -143,12 +143,14 @@ const PagespeedRowHeader = ({
       </div>
       <div>
         <Sheet>
-          <SheetTrigger asChild>
-            <Button>
-              <IoPodiumOutline />
-              <span>History</span>
-            </Button>
-          </SheetTrigger>
+          <SheetTrigger
+            render={
+              <Button>
+                <IoPodiumOutline />
+                <span>History</span>
+              </Button>
+            }
+          />
           <SheetContent className="w-[90vw] sm:max-w-[80vw] lg:max-w-[60vw]">
             <SheetHeader>
               <SheetTitle>PageSpeed History</SheetTitle>
