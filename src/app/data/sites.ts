@@ -1,4 +1,9 @@
 export const sites = {
+  "811contest": {
+    baseUrl: "https://811contest.org",
+    paths: ["/", "/poster", "/video"],
+    title: "811contest.org",
+  },
   acceleratedep: {
     baseUrl: "https://www.acceleratedep.com",
     paths: ["/", "/services", "/about", "/careers", "/contact"],
