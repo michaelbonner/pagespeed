@@ -216,6 +216,18 @@ export const sites = {
     ],
     title: "wasatchcovers.com",
   },
+  wasatchfabrication: {
+    baseUrl: "https://wasatchfabrication.com",
+    paths: [
+      "/",
+      "/services",
+      "/services/metal-welding",
+      "/about",
+      "/contact",
+      "/get-a-quote",
+    ],
+    title: "wasatchfabrication.com",
+  },
 };
 
 export const getSiteData = (site: keyof typeof sites) => {
