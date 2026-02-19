@@ -17,7 +17,8 @@ import {
   IoPodiumOutline,
 } from "react-icons/io5";
 import { PageSpeedResult } from "./PagespeedResult";
-import { PerformanceHistoryChart } from "./PerformanceHistoryChart";
+
+import { PerformanceHistoryChart } from "./PerformanceHistoryChartLazy";
 
 type PerformanceScoreKey =
   | "performanceScore"
