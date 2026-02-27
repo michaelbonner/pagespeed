@@ -59,7 +59,7 @@ export const CategoryScore = ({
         aria-label={`View pagespeed results for ${pageSpeedLink}`}
       >
         <LazyMotion features={domAnimation}>
-          <svg className="w-full h-full">
+          <svg className="w-full h-full" viewBox="0 0 100 100">
             <m.circle
               cx="50%"
               cy="50%"

@@ -101,35 +101,43 @@ export const PageSpeedResult = ({
         {data?.updatedAt ? new Date(data?.updatedAt).toLocaleString() : "N/A"}
       </p>
       <div className="grid w-full flex-wrap grid-cols-2 gap-2 py-4 text-center sm:grid-cols-5 2xl:grid-cols-6 lg:inline-grid">
-        <div className="flex flex-col gap-2 justify-center border rounded-2xl p-4 w-full">
-          <CategoryScore
-            pageSpeedLink={pageSpeedLink}
-            score={performanceScore}
-          />
+        <div className="flex flex-col gap-2 justify-center items-center border rounded-2xl p-4 w-full">
+          <div className="w-20 h-20 relative">
+            <CategoryScore
+              pageSpeedLink={pageSpeedLink}
+              score={performanceScore}
+            />
+          </div>
           <div className="text-sm lg:text-base font-bold text-gray-700">
             Performance
           </div>
         </div>
-        <div className="flex flex-col gap-2 justify-center border rounded-2xl p-4 w-full">
-          <CategoryScore
-            pageSpeedLink={pageSpeedLink}
-            score={accessibilityScore}
-          />
+        <div className="flex flex-col gap-2 justify-center items-center border rounded-2xl p-4 w-full">
+          <div className="w-20 h-20 relative">
+            <CategoryScore
+              pageSpeedLink={pageSpeedLink}
+              score={accessibilityScore}
+            />
+          </div>
           <div className="text-sm lg:text-base font-bold text-gray-700">
             Accessibility
           </div>
         </div>
-        <div className="flex flex-col gap-2 justify-center border rounded-2xl p-4 w-full">
-          <CategoryScore
-            pageSpeedLink={pageSpeedLink}
-            score={bestPracticesScore}
-          />
+        <div className="flex flex-col gap-2 justify-center items-center border rounded-2xl p-4 w-full">
+          <div className="w-20 h-20 relative">
+            <CategoryScore
+              pageSpeedLink={pageSpeedLink}
+              score={bestPracticesScore}
+            />
+          </div>
           <div className="text-sm lg:text-base font-bold text-gray-700">
             Best Practices
           </div>
         </div>
-        <div className="flex flex-col gap-2 justify-center border rounded-2xl p-4 w-full">
-          <CategoryScore pageSpeedLink={pageSpeedLink} score={seoScore} />
+        <div className="flex flex-col gap-2 justify-center items-center border rounded-2xl p-4 w-full">
+          <div className="w-20 h-20 relative">
+            <CategoryScore pageSpeedLink={pageSpeedLink} score={seoScore} />
+          </div>
           <div className="text-sm lg:text-base font-bold text-gray-700">
             SEO
           </div>
