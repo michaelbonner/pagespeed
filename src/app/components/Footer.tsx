@@ -11,7 +11,7 @@ export const Footer = () => {
             {Object.entries(sites).map(([key, site]) => (
               <Link
                 key={key}
-                className="underline underline-offset-4 text-blue-500"
+                className="underline underline-offset-4 text-sky-600"
                 href={`/${key}`}
               >
                 {site.title}

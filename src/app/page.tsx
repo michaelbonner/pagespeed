@@ -62,7 +62,7 @@ export default async function Home() {
         {siteAverages.map((siteAvg) => (
           <div key={siteAvg.slug} className="border border-gray-200 p-6 rounded-xl shadow-sm flex flex-col gap-4">
             <div className="flex justify-between items-start">
-              <Link href={`/${siteAvg.slug}`} className="text-lg font-bold hover:underline text-blue-600 truncate flex-1">
+              <Link href={`/${siteAvg.slug}`} className="text-lg font-bold hover:underline text-sky-600 truncate flex-1">
                 {siteAvg.title}
               </Link>
               {siteAvg.hasData && (

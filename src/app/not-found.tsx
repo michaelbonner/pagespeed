@@ -7,7 +7,7 @@ export default function NotFound() {
         <h1 className="text-4xl font-bold">404: Not Found</h1>
         <p className="text-lg">Could not find requested page.</p>
       </div>
-      <Link className="text-blue-500 underline" href="/">
+      <Link className="text-sky-600 underline" href="/">
         Go back to the home page
       </Link>
     </div>
