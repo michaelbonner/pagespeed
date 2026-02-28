@@ -75,25 +75,25 @@ export default async function Home() {
             {siteAvg.hasData ? (
               <div className="grid grid-cols-4 gap-2">
                 <div className="flex flex-col items-center gap-1">
-                  <div className="w-14 h-14 relative">
+                  <div className="size-full p-2 relative">
                     <CategoryScore pageSpeedLink={`/${siteAvg.slug}`} score={siteAvg.performance} />
                   </div>
                   <div className="text-[10px] uppercase tracking-wider text-gray-500 font-medium text-center">Perf</div>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="w-14 h-14 relative">
+                  <div className="size-full p-2 relative">
                     <CategoryScore pageSpeedLink={`/${siteAvg.slug}`} score={siteAvg.accessibility} />
                   </div>
                   <div className="text-[10px] uppercase tracking-wider text-gray-500 font-medium text-center">A11y</div>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="w-14 h-14 relative">
+                  <div className="size-full p-2 relative">
                     <CategoryScore pageSpeedLink={`/${siteAvg.slug}`} score={siteAvg.bestPractices} />
                   </div>
                   <div className="text-[10px] uppercase tracking-wider text-gray-500 font-medium text-center">Best</div>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="w-14 h-14 relative">
+                  <div className="size-full p-2 relative">
                     <CategoryScore pageSpeedLink={`/${siteAvg.slug}`} score={siteAvg.seo} />
                   </div>
                   <div className="text-[10px] uppercase tracking-wider text-gray-500 font-medium text-center">SEO</div>
