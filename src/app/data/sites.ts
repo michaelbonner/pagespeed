@@ -90,21 +90,6 @@ export const sites = {
     ],
     title: "hanksgaragevenue.com",
   },
-  homphoto: {
-    baseUrl: "https://www.homphoto.co",
-    paths: [
-      "/",
-      "/about-the-photographer",
-      "/blog",
-      "/get-in-touch",
-      "/in-home-family-sessions",
-      "/on-location-family-sessions",
-      "/the-experiences",
-      "/post/autism-celebration-month",
-      "/post/beautiful-claire",
-    ],
-    title: "homphoto.co",
-  },
   jmills: {
     baseUrl: "https://www.jmillsent.com",
     paths: [
