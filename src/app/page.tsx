@@ -5,8 +5,7 @@ import Link from "next/link";
 import { CategoryScore } from "./components/CategoryScore";
 import { sites, getUrls } from "./data/sites";
 
-// Cache for a short time or keep it dynamic
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const fiveDaysAgo = new Date();
