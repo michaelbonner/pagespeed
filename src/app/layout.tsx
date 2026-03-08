@@ -27,6 +27,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <script
+          async
+          src="https://easycustomerfeedback.com/widget/2a54d40ec38f44f3bd27e1e645cc771a/embed"
+          data-label="Send feedback"
+          data-position="right"
+          data-color="#111827"
+        />
       </head>
       <body>
         <div className="py-4 lg:py-10">
