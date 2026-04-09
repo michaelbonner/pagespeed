@@ -104,6 +104,18 @@ export const sites = {
     ],
     title: "jmillsent.com",
   },
+  knowyourforce: {
+    baseUrl: "https://knowyourforce.com",
+    paths: [
+      "/",
+      "/product",
+      "/about",
+      "/blog",
+      "/blog/what-officers-are-actually-up-against-in-2026-and-why-it-s-bigger-than-staffing",
+      "/contact",
+    ],
+    title: "knowyourforce.com",
+  },
   michaelbonner: {
     baseUrl: "https://michaelbonner.dev",
     paths: [
