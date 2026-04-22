@@ -67,6 +67,11 @@ export const sites = {
     ],
     title: "dkow.com",
   },
+  easycustomerfeedback: {
+    baseUrl: "https://easycustomerfeedback.com",
+    paths: ["/"],
+    title: "easycustomerfeedback.com",
+  },
   energysafekids: {
     baseUrl: "https://energysafekids.org",
     paths: [
@@ -103,6 +108,11 @@ export const sites = {
       "/work",
     ],
     title: "jmillsent.com",
+  },
+  joblisting: {
+    baseUrl: "https://joblisting.app",
+    paths: ["/"],
+    title: "joblisting.app",
   },
   knowyourforce: {
     baseUrl: "https://knowyourforce.com",
@@ -164,6 +174,11 @@ export const sites = {
       "/contact/",
     ],
     title: "nef1.org",
+  },
+  officelunch: {
+    baseUrl: "https://officelunch.app",
+    paths: ["/"],
+    title: "officelunch.app",
   },
   theravenspace: {
     baseUrl: "https://theravenspace.com",
