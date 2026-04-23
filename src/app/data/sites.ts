@@ -111,7 +111,7 @@ export const sites = {
   },
   joblisting: {
     baseUrl: "https://joblisting.app",
-    paths: ["/"],
+    paths: ["/", "/pricing", "/contact"],
     title: "joblisting.app",
   },
   knowyourforce: {
@@ -177,7 +177,7 @@ export const sites = {
   },
   officelunch: {
     baseUrl: "https://officelunch.app",
-    paths: ["/"],
+    paths: ["/", "/pricing", "/contact"],
     title: "officelunch.app",
   },
   theravenspace: {
