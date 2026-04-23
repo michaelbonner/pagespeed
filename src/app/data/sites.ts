@@ -69,7 +69,7 @@ export const sites = {
   },
   easycustomerfeedback: {
     baseUrl: "https://easycustomerfeedback.com",
-    paths: ["/"],
+    paths: ["/", "/features", "/pricing", "/help", "/contact", "/about"],
     title: "easycustomerfeedback.com",
   },
   energysafekids: {
