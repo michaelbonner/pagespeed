@@ -180,6 +180,11 @@ export const sites = {
     paths: ["/", "/pricing", "/contact"],
     title: "officelunch.app",
   },
+  pathwaysenergy: {
+    baseUrl: "https://www.pathwaysenergy.org",
+    paths: ["/", "/teachers", "/games"],
+    title: "pathwaysenergy.org",
+  },
   theravenspace: {
     baseUrl: "https://theravenspace.com",
     paths: ["/", "/about", "/gallery"],
