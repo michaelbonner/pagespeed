@@ -190,11 +190,6 @@ export const sites = {
     paths: ["/", "/about", "/gallery"],
     title: "theravenspace.com",
   },
-  whattodoinsaltlake: {
-    baseUrl: "https://whattodoinsaltlake.com",
-    paths: ["/", "/events", "/locations", "/contact"],
-    title: "whattodoinsaltlake.com",
-  },
   utahmountainadventures: {
     baseUrl: "https://www.utahmountainadventures.com",
     paths: [
@@ -249,6 +244,11 @@ export const sites = {
       "/get-a-quote",
     ],
     title: "wasatchfabrication.com",
+  },
+  whattodoinsaltlake: {
+    baseUrl: "https://whattodoinsaltlake.com",
+    paths: ["/", "/events", "/locations", "/contact"],
+    title: "whattodoinsaltlake.com",
   },
 };
 
