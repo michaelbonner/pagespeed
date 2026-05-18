@@ -11,6 +11,16 @@ export const dashboards = {
       "wasatchfabrication",
     ] satisfies (keyof typeof sites)[],
   },
+  bootpack: {
+    title: "Bootpack",
+    siteSlugs: [
+      "bootpackdigital",
+      "easycustomerfeedback",
+      "joblisting",
+      "michaelbonner",
+      "officelunch",
+    ] satisfies (keyof typeof sites)[],
+  },
   nef: {
     title: "NEF",
     siteSlugs: [
