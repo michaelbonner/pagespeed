@@ -11,6 +11,15 @@ export const dashboards = {
       "wasatchfabrication",
     ] satisfies (keyof typeof sites)[],
   },
+  nef: {
+    title: "NEF",
+    siteSlugs: [
+      "811contest",
+      "energysafekids",
+      "nef1",
+      "pathwaysenergy",
+    ] satisfies (keyof typeof sites)[],
+  },
 } as const;
 
 export type DashboardSlug = keyof typeof dashboards;
