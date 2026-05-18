@@ -19,6 +19,21 @@ export const dashboards = {
       "joblisting",
       "michaelbonner",
       "officelunch",
+      "whattodoinsaltlake",
+    ] satisfies (keyof typeof sites)[],
+  },
+  clients: {
+    title: "Clients",
+    siteSlugs: [
+      "acceleratedep",
+      "blackthornsoftware",
+      "crewview",
+      "dkow",
+      "hanksgaragevenue",
+      "jmills",
+      "knowyourforce",
+      "theravenspace",
+      "utahmountainadventures",
     ] satisfies (keyof typeof sites)[],
   },
   nef: {
