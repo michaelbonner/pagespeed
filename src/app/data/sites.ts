@@ -126,6 +126,22 @@ export const sites = {
     ],
     title: "knowyourforce.com",
   },
+  lostcreekcontracting: {
+    baseUrl: "https://lostcreekcontracting.com",
+    paths: [
+      "/",
+      "/services/",
+      "/services/excavation/",
+      "/services/demolition/",
+      "/services/land-grading/",
+      "/services/retention-systems/",
+      "/why-us/",
+      "/service-area/",
+      "/gallery/",
+      "/contact/",
+    ],
+    title: "lostcreekcontracting.com",
+  },
   michaelbonner: {
     baseUrl: "https://michaelbonner.dev",
     paths: [
