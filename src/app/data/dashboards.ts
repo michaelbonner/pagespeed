@@ -32,6 +32,7 @@ export const dashboards = {
       "hanksgaragevenue",
       "jmills",
       "knowyourforce",
+      "lostcreekcontracting",
       "theravenspace",
       "utahmountainadventures",
     ] satisfies (keyof typeof sites)[],
