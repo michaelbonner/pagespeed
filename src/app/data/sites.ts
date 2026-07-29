@@ -95,6 +95,22 @@ export const sites = {
     ],
     title: "hanksgaragevenue.com",
   },
+  homeorganizingme: {
+    baseUrl: "https://www.homeorganizingme.com",
+    paths: [
+      "/",
+      "/services/",
+      "/pricing/",
+      "/guides/",
+      "/guides/how-to-declutter-before-downsizing/",
+      "/guides/senior-move-planning-louisville/",
+      "/guides/organize-home-one-room-at-a-time/",
+      "/story/",
+      "/testimonials/",
+      "/contact/",
+    ],
+    title: "homeorganizingme.com",
+  },
   jmills: {
     baseUrl: "https://www.jmillsent.com",
     paths: [
