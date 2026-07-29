@@ -30,6 +30,7 @@ export const dashboards = {
       "crewview",
       "dkow",
       "hanksgaragevenue",
+      "homeorganizingme",
       "jmills",
       "knowyourforce",
       "lostcreekcontracting",
