@@ -125,10 +125,8 @@ function ChartTooltipContent({
     indicator?: "line" | "dot" | "dashed";
     nameKey?: string;
     labelKey?: string;
-    /* eslint-disable @typescript-eslint/no-explicit-any */
     payload?: any[];
     label?: any;
-    /* eslint-enable @typescript-eslint/no-explicit-any */
   }) {
   const { config } = useChart();
 
