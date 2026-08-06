@@ -52,15 +52,6 @@ export const GET = async () => {
     20
   );
 
-  // preload all the pages with a 500ms delay between each
-  await Promise.all(
-    pageUrlsWithStrategyToFetch.map((page, index) =>
-      new Promise((resolve) => setTimeout(resolve, 500 * index)).then(() =>
-        getPageSpeedData(page.url, page.strategy)
-      )
-    )
-  );
-
   if (pageUrlsWithStrategyToFetch.length === 0) {
     return NextResponse.json(
       {
@@ -74,7 +65,52 @@ export const GET = async () => {
     );
   }
 
+  // preload all the pages with a 500ms delay between each
+  //
+  // allSettled, not all: PageSpeed Insights fails on individual pages that
+  // Lighthouse cannot get through ("Lighthouse returned error: Something went
+  // wrong"), and getPageSpeedData throws on any non-OK response. Under
+  // Promise.all one such page rejected the whole batch, so the route 500'd and
+  // the cron went red even though the other 19 pages were fine. Worse, a page
+  // that throws never gets a row written, so it stayed in the candidate set and
+  // poisoned every subsequent run.
+  const results = await Promise.allSettled(
+    pageUrlsWithStrategyToFetch.map((page, index) =>
+      new Promise((resolve) => setTimeout(resolve, 500 * index)).then(() =>
+        getPageSpeedData(page.url, page.strategy)
+      )
+    )
+  );
+
+  const failures = results.flatMap((result, index) =>
+    result.status === "rejected"
+      ? [{ page: pageUrlsWithStrategyToFetch[index], reason: result.reason }]
+      : []
+  );
+
+  for (const { page, reason } of failures) {
+    console.error(
+      `preload failed: ${page.strategy} ${page.url}`,
+      reason instanceof Error ? reason.message : reason
+    );
+  }
+
+  const preloaded = results.length - failures.length;
+
+  // Every single page failing is not a flaky page, it is something systemic —
+  // an expired API key, no network, a dead database. Report that as an error so
+  // the schedule goes red; a handful of flaky pages should not.
+  if (preloaded === 0) {
+    return NextResponse.json(
+      {
+        error: `All ${results.length} pages failed to preload`,
+      },
+      { status: 500 }
+    );
+  }
+
   return NextResponse.json({
-    success: `Total pages preloaded: ${pageUrlsWithStrategyToFetch.length}`,
+    success: `Total pages preloaded: ${preloaded}`,
+    ...(failures.length > 0 && { failed: failures.length }),
   });
 };
