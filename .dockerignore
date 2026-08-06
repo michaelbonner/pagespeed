@@ -21,7 +21,10 @@ bunfig.toml
 
 # Infra & tooling that runs in CI or locally, never in the image.
 # scripts/dokploy-preview.mjs only ever runs on a GitHub runner.
+# preload-pagespeed-results.mjs is the exception: the Dokploy schedule runs it
+# with `docker exec` inside this container, so it has to ship in the image.
 scripts
+!scripts/preload-pagespeed-results.mjs
 docker-compose.yml
 Dockerfile
 .dockerignore

@@ -63,6 +63,11 @@ ENV NODE_ENV=production \
 COPY --from=build --chown=node:node /app/.next/standalone ./
 COPY --from=build --chown=node:node /app/.next/static ./.next/static
 COPY --from=build --chown=node:node /app/public ./public
+
+# Not part of the server — this is what the "Preload Pagespeed Results" Dokploy
+# schedule execs every 30 minutes. It needs no node_modules, only Node itself.
+COPY --from=build --chown=node:node /app/scripts/preload-pagespeed-results.mjs ./scripts/
+
 USER node
 
 EXPOSE 3000
