@@ -43,6 +43,7 @@ export const dashboards = {
     siteSlugs: [
       "811contest",
       "energysafekids",
+      "energysafeskills",
       "nef1",
       "pathwaysenergy",
     ] satisfies (keyof typeof sites)[],
