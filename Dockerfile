@@ -22,11 +22,15 @@ ARG NODE_IMAGE=node:22-slim
 FROM ${BUN_IMAGE} AS dependencies
 WORKDIR /app
 
-# Dependencies first so this layer caches until the lockfile moves.
+# Install only application and production-build dependencies. Storybook,
+# Playwright, Vitest, ESLint, and migration tooling are not needed to compile
+# or run the deployed application, so keeping them out makes this intermediate
+# layer substantially smaller.
+#
 # --ignore-scripts: nothing here needs a postinstall, and running one on a
 # toolchain-free base is a failure waiting to happen.
 COPY package.json bun.lock ./
-RUN bun install --frozen-lockfile --ignore-scripts
+RUN bun install --frozen-lockfile --ignore-scripts --production
 
 FROM ${NODE_IMAGE} AS build
 WORKDIR /app

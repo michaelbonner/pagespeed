@@ -85,8 +85,12 @@ jobs:
           tags: |
             ${{ steps.meta.outputs.image }}:latest
             ${{ steps.meta.outputs.image }}:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # Reuse cache metadata embedded in the image that is already being
+          # pushed. This avoids a second upload of every intermediate layer to
+          # GitHub's cache service, which can take several minutes after the
+          # cache expires.
+          cache-from: type=registry,ref=${{ steps.meta.outputs.image }}:latest
+          cache-to: type=inline
 
       # The non-empty check above cannot tell whether the token still WORKS. An
       # expired or revoked one would sail past it, and then saveDockerProvider
