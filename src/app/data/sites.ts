@@ -9,6 +9,11 @@ export const sites = {
     paths: ["/", "/services", "/about", "/careers", "/contact"],
     title: "acceleratedep.com",
   },
+  andrewpollardcreative: {
+    baseUrl: "https://andrewpollardcreative.com",
+    paths: ["/", "/about/", "/art/", "/dj/", "/murals/", "/ski/"],
+    title: "andrewpollardcreative.com",
+  },
   blackthornsoftware: {
     baseUrl: "https://www.blackthornsoftware.com",
     paths: ["/", "/careers", "/get-started"],

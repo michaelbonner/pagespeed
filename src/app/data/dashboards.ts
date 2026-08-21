@@ -26,6 +26,7 @@ export const dashboards = {
     title: "Clients",
     siteSlugs: [
       "acceleratedep",
+      "andrewpollardcreative",
       "blackthornsoftware",
       "crewview",
       "dkow",
