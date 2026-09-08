@@ -19,6 +19,20 @@ export const sites = {
     paths: ["/", "/careers", "/get-started"],
     title: "blackthornsoftware.com",
   },
+  bookameetingtime: {
+    baseUrl: "https://bookameetingtime.com",
+    paths: [
+      "/",
+      "/how-it-works",
+      "/integrations",
+      "/demo",
+      "/pricing",
+      "/signup",
+      "/privacy",
+      "/terms",
+    ],
+    title: "bookameetingtime.com",
+  },
   bootpackdigital: {
     baseUrl: "https://bootpackdigital.com",
     paths: ["/", "/about", "/contact", "/open-source", "/policies", "/work"],

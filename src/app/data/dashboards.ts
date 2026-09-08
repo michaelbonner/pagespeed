@@ -14,6 +14,7 @@ export const dashboards = {
   bootpack: {
     title: "Bootpack",
     siteSlugs: [
+      "bookameetingtime",
       "bootpackdigital",
       "easycustomerfeedback",
       "joblisting",
