@@ -17,14 +17,12 @@ import {
   IoPodiumOutline,
 } from "react-icons/io5";
 import { PageSpeedResult } from "./PagespeedResult";
+import { PageSpeedSkeleton } from "./PageSpeedSkeleton";
 
 import { PerformanceHistoryChart } from "./PerformanceHistoryChartLazy";
 
 type PerformanceScoreKey =
-  | "performanceScore"
-  | "accessibilityScore"
-  | "bestPracticesScore"
-  | "seoScore";
+  "performanceScore" | "accessibilityScore" | "bestPracticesScore" | "seoScore";
 
 export default function PageSpeed({
   url,
@@ -34,7 +32,7 @@ export default function PageSpeed({
   performanceHistory: PerformanceHistoryData;
 }) {
   const pageSpeedLink = `https://pagespeed.web.dev/report?url=${encodeURIComponent(
-    url
+    url,
   )}`;
 
   return (
@@ -49,7 +47,7 @@ export default function PageSpeed({
 
         <span>Mobile</span>
       </h3>
-      <Suspense fallback={<div>Loading mobile results...</div>}>
+      <Suspense fallback={<PageSpeedSkeleton strategy="mobile" />}>
         <PageSpeedResult
           pageSpeedLink={`${pageSpeedLink}&form_factor=mobile`}
           strategy="mobile"
@@ -61,7 +59,7 @@ export default function PageSpeed({
 
         <span>Desktop</span>
       </h3>
-      <Suspense fallback={<div>Loading desktop results...</div>}>
+      <Suspense fallback={<PageSpeedSkeleton strategy="desktop" />}>
         <PageSpeedResult
           pageSpeedLink={`${pageSpeedLink}&form_factor=desktop`}
           strategy="desktop"
