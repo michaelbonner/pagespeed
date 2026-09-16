@@ -4,13 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import { clsx } from "clsx";
 import { IoAlertCircleOutline } from "react-icons/io5";
 import { CategoryScore } from "./CategoryScore";
+import { PageSpeedSkeleton } from "./PageSpeedSkeleton";
 
 const getPageSpeedData = async (
   url: string,
-  strategy: "mobile" | "desktop"
+  strategy: "mobile" | "desktop",
 ) => {
   const res = await fetch(
-    `/api/get-pagespeed-results?url=${url}&strategy=${strategy}`
+    `/api/get-pagespeed-results?url=${url}&strategy=${strategy}`,
   );
 
   if (!res.ok) {
@@ -39,14 +40,7 @@ export const PageSpeedResult = ({
   });
 
   if (status === "pending") {
-    return (
-      <>
-        <p className="text-sm text-gray-500 pb-8 animate-pulse min-h-[300px] lg:min-h-[200px] 2xl:min-h-[300px]">
-          Loading results...
-        </p>
-        <p className="text-sm text-gray-500 py-2">&nbsp;</p>
-      </>
-    );
+    return <PageSpeedSkeleton strategy={strategy} />;
   }
 
   if (status === "error") {
@@ -150,7 +144,7 @@ export const PageSpeedResult = ({
               "2xl:col-span-2 2xl:max-h-[300px]",
               strategy === "mobile"
                 ? "aspect-5/8 max-w-[300px] 2xl:max-w-[300px] mx-auto"
-                : "aspect-3/2 2xl:max-w-[500px]"
+                : "aspect-3/2 2xl:max-w-[500px]",
             )}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
