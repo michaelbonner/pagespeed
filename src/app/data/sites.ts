@@ -108,7 +108,7 @@ export const sites = {
     title: "energysafekids.org",
   },
   energysafeskills: {
-    baseUrl: "https://new.energysafeskills.org",
+    baseUrl: "https://energysafeskills.org",
     paths: [
       "/",
       "/indiana",
@@ -120,7 +120,7 @@ export const sites = {
       "/minnesota/presentation",
       "/minnesota/student",
     ],
-    title: "new.energysafeskills.org",
+    title: "energysafeskills.org",
   },
   hanksgaragevenue: {
     baseUrl: "https://www.hanksgaragevenue.com",
