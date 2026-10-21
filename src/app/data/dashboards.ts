@@ -38,6 +38,7 @@ export const dashboards = {
       "lostcreekcontracting",
       "theravenspace",
       "utahmountainadventures",
+      "wasatchblade",
     ] satisfies (keyof typeof sites)[],
   },
   nef: {

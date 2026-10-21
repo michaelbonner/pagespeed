@@ -292,6 +292,18 @@ export const sites = {
     ],
     title: "utahwindowwellcovers.com",
   },
+  wasatchblade: {
+    baseUrl: "https://wasatchblade.com",
+    paths: [
+      "/",
+      "/shop",
+      "/products/spyderco-paramilitary-2-crucarta",
+      "/about",
+      "/our-process",
+      "/contact",
+    ],
+    title: "wasatchblade.com",
+  },
   wasatchcovers: {
     baseUrl: "https://wasatchcovers.com",
     paths: [
