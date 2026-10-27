@@ -24,8 +24,19 @@ export async function getPageSpeedData(
   });
 
   if (!res.ok) {
-    console.error("res data", await res.text());
-    throw new Error("Failed to fetch data");
+    const body = await res.text();
+    console.error("res data", body);
+
+    // Surface PageSpeed's own reason (e.g. "Lighthouse returned error:
+    // FAILED_DOCUMENT_REQUEST ...") so the caller's log line says why it failed
+    // instead of just that it failed.
+    let message = "Failed to fetch data";
+    try {
+      message = JSON.parse(body)?.error?.message ?? message;
+    } catch {
+      // not JSON; keep the generic message
+    }
+    throw new Error(message);
   }
 
   const returnData = await res.json();
