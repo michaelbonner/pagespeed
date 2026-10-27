@@ -41,26 +41,23 @@ export async function getPageSpeedData(
 
   const returnData = await res.json();
 
-  try {
-    // store in the db
-    await db
-      .insert(pagesTable)
-      .values({
-        url,
-        strategy,
-        performanceScore:
-          returnData?.lighthouseResult?.categories?.performance?.score ?? 0,
-        accessibilityScore:
-          returnData?.lighthouseResult?.categories?.accessibility?.score ?? 0,
-        bestPracticesScore:
-          returnData?.lighthouseResult?.categories?.["best-practices"]?.score ??
-          0,
-        seoScore: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
-      })
-      .onConflictDoNothing();
-  } catch (error) {
-    console.error(error);
-  }
+  // A fetched result is only preloaded after it is stored. Let write failures
+  // reach the caller so the preload job does not log them as successes.
+  await db
+    .insert(pagesTable)
+    .values({
+      url,
+      strategy,
+      performanceScore:
+        returnData?.lighthouseResult?.categories?.performance?.score ?? 0,
+      accessibilityScore:
+        returnData?.lighthouseResult?.categories?.accessibility?.score ?? 0,
+      bestPracticesScore:
+        returnData?.lighthouseResult?.categories?.["best-practices"]?.score ??
+        0,
+      seoScore: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
+    })
+    .onConflictDoNothing();
 
   return {
     lighthouseResult: {
