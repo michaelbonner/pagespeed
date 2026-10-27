@@ -24,32 +24,40 @@ export async function getPageSpeedData(
   });
 
   if (!res.ok) {
-    console.error("res data", await res.text());
-    throw new Error("Failed to fetch data");
+    const body = await res.text();
+    console.error("res data", body);
+
+    // Surface PageSpeed's own reason (e.g. "Lighthouse returned error:
+    // FAILED_DOCUMENT_REQUEST ...") so the caller's log line says why it failed
+    // instead of just that it failed.
+    let message = "Failed to fetch data";
+    try {
+      message = JSON.parse(body)?.error?.message ?? message;
+    } catch {
+      // not JSON; keep the generic message
+    }
+    throw new Error(message);
   }
 
   const returnData = await res.json();
 
-  try {
-    // store in the db
-    await db
-      .insert(pagesTable)
-      .values({
-        url,
-        strategy,
-        performanceScore:
-          returnData?.lighthouseResult?.categories?.performance?.score ?? 0,
-        accessibilityScore:
-          returnData?.lighthouseResult?.categories?.accessibility?.score ?? 0,
-        bestPracticesScore:
-          returnData?.lighthouseResult?.categories?.["best-practices"]?.score ??
-          0,
-        seoScore: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
-      })
-      .onConflictDoNothing();
-  } catch (error) {
-    console.error(error);
-  }
+  // A fetched result is only preloaded after it is stored. Let write failures
+  // reach the caller so the preload job does not log them as successes.
+  await db
+    .insert(pagesTable)
+    .values({
+      url,
+      strategy,
+      performanceScore:
+        returnData?.lighthouseResult?.categories?.performance?.score ?? 0,
+      accessibilityScore:
+        returnData?.lighthouseResult?.categories?.accessibility?.score ?? 0,
+      bestPracticesScore:
+        returnData?.lighthouseResult?.categories?.["best-practices"]?.score ??
+        0,
+      seoScore: returnData?.lighthouseResult?.categories?.seo?.score ?? 0,
+    })
+    .onConflictDoNothing();
 
   return {
     lighthouseResult: {

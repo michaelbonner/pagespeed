@@ -111,6 +111,15 @@ export const GET = async () => {
     );
   }
 
+  // Log successes too: the Grafana alert for a site that keeps failing needs to
+  // tell "failed every attempt" from "failed once among many successes".
+  results.forEach((result, index) => {
+    if (result.status === "fulfilled") {
+      const page = pageUrlsWithStrategyToFetch[index];
+      console.log(`preload ok: ${page.strategy} ${page.url}`);
+    }
+  });
+
   const preloaded = results.length - failures.length;
 
   // Every single page failing is not a flaky page, it is something systemic —
