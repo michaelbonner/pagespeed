@@ -10,6 +10,15 @@ type PageUrlAndStrategy = {
   strategy: "mobile" | "desktop";
 };
 
+// A page that fails never gets a row written, so without this it is retried on
+// every 30-minute run, taking a slot from pages that would succeed and logging
+// the same Lighthouse timeout each time. Back off a failed page for the same
+// window a successful one is skipped for. Kept in memory rather than the db:
+// the server is a single long-lived process, and losing this on a restart only
+// costs one extra attempt per failing page.
+const FAILURE_BACKOFF_MS = 12 * 60 * 60 * 1000;
+const lastFailureAt = new Map<string, number>();
+
 export const GET = async () => {
   const allDbEntriesWithinTheLastTwelveHours = await db
     .select({
@@ -24,6 +33,11 @@ export const GET = async () => {
     site.paths.map((path) => `${site.baseUrl}${path}`)
   );
 
+  const now = Date.now();
+  for (const [key, failedAt] of lastFailureAt) {
+    if (now - failedAt >= FAILURE_BACKOFF_MS) lastFailureAt.delete(key);
+  }
+
   // get all the pages that need to be preloaded
   const pagesStrategyToFetch = allSitePages.reduce((acc, page) => {
     const strategies = ["mobile", "desktop"] as const;
@@ -33,6 +47,7 @@ export const GET = async () => {
 
       if (
         !acc[key] &&
+        !lastFailureAt.has(key) &&
         !allDbEntriesWithinTheLastTwelveHours.some(
           (entry) => entry.url === page && entry.strategy === strategy
         )
@@ -89,6 +104,7 @@ export const GET = async () => {
   );
 
   for (const { page, reason } of failures) {
+    lastFailureAt.set(`${page.strategy}-${page.url}`, Date.now());
     console.error(
       `preload failed: ${page.strategy} ${page.url}`,
       reason instanceof Error ? reason.message : reason
