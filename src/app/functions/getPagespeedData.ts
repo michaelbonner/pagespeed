@@ -25,7 +25,6 @@ export async function getPageSpeedData(
 
   if (!res.ok) {
     const body = await res.text();
-    console.error("res data", body);
 
     // Surface PageSpeed's own reason (e.g. "Lighthouse returned error:
     // FAILED_DOCUMENT_REQUEST ...") so the caller's log line says why it failed
